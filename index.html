@@ -4,10 +4,11 @@
 <style>body{font-family:system-ui,sans-serif;background:#f6f8fb;color:#222;margin:0;padding:16px}h1{font-size:20px}.k{display:flex;flex-wrap:wrap;gap:10px}.c{background:#fff;border-radius:10px;padding:10px 14px;box-shadow:0 1px 3px #0001;min-width:120px}.c b{display:block;font-size:20px}
 .box{background:#fff;border-radius:10px;padding:12px;margin-top:14px;box-shadow:0 1px 3px #0001;overflow-x:auto}table{border-collapse:collapse;font-size:12px;width:100%}td,th{border-bottom:1px solid #eee;padding:4px 6px;text-align:left;white-space:nowrap}.w{color:#0a8}.l{color:#d33}small{color:#777}</style></head><body>
 <h1>GateLadder 0.9.56 BTCUSDT 포워드 모의테스트 <small>(가상 자금 1000 USDT · 실주문 없음 · Binance 공개 시세)</small></h1>
+<div class="box" style="margin-top:0"><small><b>GateLadder 0.9.56 로직 정리(2026-11-02, 사용자 제공) 기준 시뮬레이션.</b> 3배, 원금 1000 USDT 대비 증거금, 박스권(롱·숏), 헤지 모드 가정, 손절 없음, 수수료 0.05%(taker)·슬리피지 0.01%, 환급 80%는 별도 추정.<br>남은 단순화: Binance 1분봉으로 체결 판정(Gate 가격·괴리 검사 없음, 마크가격 대신 1분 종가), 지정가는 터치 시 전량 체결, 반복저점·가로막는 고저점 2겹·15분 횡보·삼각형 수렴·구출 변동폭 필터는 근사 구현, 최소 주문 단위/계약 정수 미반영, 펀딩비 제외, 앱 꺼짐/통신 오류 미반영.</small></div>
 <div id="meta"></div><div class="k" id="kpi"></div>
 <div class="box"><h3>가격 (15분봉) · 진입/청산 · 감지된 지지저항선</h3><div id="pc" style="height:420px"></div><div id="snap"></div></div>
 <div class="box"><h3>자산 곡선</h3><div id="ec" style="height:250px"></div></div>
-<div class="box"><h3>일별 손익</h3><table id="daily"></table></div>
+<div class="box"><h3>실계좌 참고 (사용자 제공)</h3><small>11/1~11/2 실제 기록: 종료 10건 모두 1차 익절 후 본절, 환급 제외 합계 −3.65 USDT. 시뮬레이션 결과와는 별개.</small></div><div class="box"><h3>일별 손익</h3><table id="daily"></table></div>
 <div class="box"><h3>전략별</h3><table id="strat"></table></div>
 <div class="box"><h3>보유 포지션</h3><table id="pos"></table></div>
 <div class="box"><h3>거래 내역 (진입 근거 포함, 최신순)</h3><table id="tr"></table></div>
@@ -19,13 +20,13 @@ const pc=v=>`<span class="${v>0?'w':'l'}">${v}</span>`;
 const ts=s=>Math.floor(new Date(s.replace(' ','T')+':00+09:00')/1000);
 fetch(U).then(r=>r.json()).then(d=>{
 document.getElementById('meta').innerHTML=`<small>기간 ${d.start} ~ ${d.end} KST · 마지막 갱신 ${d.updated} KST · BTC ${d.price}</small>`;
-const K=[['시작자금',d.initial],['현재 자산',d.equity],['수익률 %',pc(d.ret_pct)],['최대낙폭 %',d.mdd_pct],['청산 거래수',d.trades],['승률 %',d.winrate??'-'],['구출 발동',d.rescues.length],['강제청산',d.liquidated?'발생':'없음'],['보유 포지션',d.positions.length]];
+const K=[['시작자금',d.initial],['현재 자산',d.equity],['수익률 %',pc(d.ret_pct)],['최대낙폭 %',d.mdd_pct],['청산 거래수',d.trades],['승률 %',d.winrate??'-'],['구출 발동',d.rescues.length],['강제청산',d.liquidated?'발생':'없음'],['보유 포지션',d.positions.length],['환급 추정',d.rebate],['환급 포함 자산',d.equity_rebate],['환급 포함 수익률 %',pc(d.ret_rebate_pct)],['구출 상태',(d.rescue_active&&(d.rescue_active.L||d.rescue_active.S))?('진행중 '+(d.rescue_active.L?'롱 추가 '+d.rescue_active.L.adds+'/30 ':'')+(d.rescue_active.S?'숏 추가 '+d.rescue_active.S.adds+'/30':'')):'대기']];
 document.getElementById('kpi').innerHTML=K.map(k=>`<div class="c">${k[0]}<b>${k[1]}</b></div>`).join('');
 tbl('daily',d.daily,[['날짜','date'],['시작','start'],['종료','end'],['손익 %','pnl_pct',pc],['이익 USDT','gain_usdt'],['손실 USDT','loss_usdt'],['손실 %','loss_pct'],['거래','trades'],['승','wins']]);
-tbl('strat',Object.entries(d.by_strategy).map(([k,v])=>({k,...v})),[['전략','k'],['청산수','n'],['승','wins'],['손익 USDT','pnl',pc]]);
+const NM={sr1:'1분 지지저항',tri1:'1분 삼각형',rsi1:'1분 RSI',brk15:'15분 돌파/리테스트',sr15:'15분 지지저항',rsi15:'RSI 15분',rsi60:'RSI 1시간',brk60:'1시간 돌파/리테스트',rescue:'구출 추가분'};tbl('strat',Object.entries(d.by_strategy).map(([k,v])=>({k:NM[k]||k,open:d.open_by_strat[k]||0,...v})),[['전략','k'],['청산수','n'],['승','wins'],['승률 %','winrate'],['손익 USDT(환급 전)','pnl',pc],['환급 포함','pnl_rebate',pc],['보유','open']]);
 tbl('pos',d.positions,[['진입시각','opened'],['전략','strat'],['방향','side'],['진입가','entry'],['수량 BTC','qty'],['근거','info']]);
-tbl('tr',[...d.trades_list].reverse(),[['진입','time_in'],['청산','time_out'],['전략','strat'],['방향','side'],['진입가','entry'],['청산가','exit'],['손익 USDT','pnl',pc],['증거금대비 %','pnl_pct_margin',pc],['결과','result'],['청산사유','why'],['진입 근거','info']]);
-const s=d.snap||{};document.getElementById('snap').innerHTML=`<small>RSI15 ${s.rsi15??'-'} · RSI1h ${s.rsi60??'-'} · 15m 선: ${(s.lines15||[]).map(l=>l.type+' '+l.level).join(', ')||'없음'} · 1h 선: ${(s.lines60||[]).map(l=>l.type+' '+l.level).join(', ')||'없음'} (삼각형/1분 전략은 미구현)</small>`;
+tbl('tr',[...d.trades_list].reverse(),[['진입','time_in'],['청산','time_out'],['전략','strat'],['방향','side'],['진입가','entry'],['청산가','exit'],['손익 USDT','pnl',pc],['환급 포함','pnl_rebate',pc],['증거금대비 %','pnl_pct_margin',pc],['결과','result'],['청산사유','why'],['진입 근거','info']]);
+const s=d.snap||{};document.getElementById('snap').innerHTML=`<small>RSI15 ${s.rsi15??'-'} · RSI1h ${s.rsi60??'-'} · 15m 선: ${(s.lines15||[]).map(l=>l.type+' '+l.level).join(', ')||'없음'} · 1h 선: ${(s.lines60||[]).map(l=>l.type+' '+l.level).join(', ')||'없음'} · 1분 삼각형: ${s.triangle?('상단 '+s.triangle.upper+' / 하단 '+s.triangle.lower):'없음'} · RSI1m ${s.rsi1??'-'}</small>`;
 const ch=LightweightCharts.createChart(document.getElementById('pc'),{layout:{background:{color:'#fff'}},timeScale:{timeVisible:true}});
 const cs=ch.addCandlestickSeries();cs.setData(d.candles.map(c=>({time:c[0]+32400,open:c[1],high:c[2],low:c[3],close:c[4]})));
 [...(s.lines15||[]),...(s.lines60||[])].forEach(l=>cs.createPriceLine({price:l.level,color:l.type=='R'?'#d33':'#0a8',lineStyle:2,title:l.type}));
