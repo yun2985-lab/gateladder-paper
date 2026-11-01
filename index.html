@@ -1,10 +1,18 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="300"><title>GateLadder 0.9.56 모의테스트 (BTCUSDT)</title>
+<meta http-equiv="refresh" content="300"><title>GateLadder 모의테스트 (0.9.56 vs 0.9.61 추천안)</title>
 <script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
 <style>body{font-family:system-ui,sans-serif;background:#f6f8fb;color:#222;margin:0;padding:16px}h1{font-size:20px}.k{display:flex;flex-wrap:wrap;gap:10px}.c{background:#fff;border-radius:10px;padding:10px 14px;box-shadow:0 1px 3px #0001;min-width:120px}.c b{display:block;font-size:20px}
 .box{background:#fff;border-radius:10px;padding:12px;margin-top:14px;box-shadow:0 1px 3px #0001;overflow-x:auto}table{border-collapse:collapse;font-size:12px;width:100%}td,th{border-bottom:1px solid #eee;padding:4px 6px;text-align:left;white-space:nowrap}.w{color:#0a8}.l{color:#d33}small{color:#777}</style></head><body>
 <h1>GateLadder 0.9.56 BTCUSDT 포워드 모의테스트 <small>(가상 자금 1000 USDT · 실주문 없음 · Binance 공개 시세)</small></h1>
-<div class="box" style="margin-top:0"><small><b>GateLadder 0.9.56 로직 정리(2026-11-02, 사용자 제공) 기준 시뮬레이션.</b> 3배, 원금 1000 USDT 대비 증거금, 박스권(롱·숏), 헤지 모드 가정, 손절 없음, 수수료 0.05%(taker)·슬리피지 0.01%, 환급 80%는 별도 추정.<br>남은 단순화: Binance 1분봉으로 체결 판정(Gate 가격·괴리 검사 없음, 마크가격 대신 1분 종가), 지정가는 터치 시 전량 체결, 반복저점·가로막는 고저점 2겹·15분 횡보·삼각형 수렴·구출 변동폭 필터는 근사 구현, 최소 주문 단위/계약 정수 미반영, 펀딩비 제외, 앱 꺼짐/통신 오류 미반영.</small></div>
+<div class="box" style="margin-top:0" id="cmt"><h3>분석 의견</h3><div id="cmtb"><small>불러오는 중…</small></div></div>
+<div class="box"><b>보기:</b> <button onclick="tab('A')" id="bA">0.9.56 모의테스트</button> <button onclick="tab('B')" id="bB">0.9.56 vs 0.9.61 추천안 비교</button></div>
+<div id="tabB" style="display:none"><div class="box"><h3>나란히 비교 (각 1000 USDT 시작)</h3><small>A = 0.9.56 현재 로직 · B = 0.9.61 + 추천 설정(구출 −2%/남은 시드 70%/10분할, 1분 삼각형 2%, 15분 돌파 끔, 1분 지지저항 끔, 1분봉 1차 전량 익절, 본절 15분 지연, 겹침 50% 평단 정리, 72시간 구출 알림 기록)</small><table id="cmp"></table></div>
+<div class="box"><h3>자산 곡선 비교 (파랑 A · 주황 B)</h3><div id="cec" style="height:280px"></div></div>
+<div class="box"><h3>일별 손익 비교</h3><table id="cdaily"></table></div>
+<div class="box"><h3>전략별 (B)</h3><table id="cstrat"></table></div>
+<div class="box"><h3>보유 포지션 (B)</h3><table id="cpos"></table></div>
+<div class="box"><h3>거래 내역 (B, 최신순)</h3><table id="ctr"></table></div></div>
+<div id="tabA"><div class="box"><small><b>GateLadder 0.9.56 로직 정리(2026-11-02, 사용자 제공) 기준 시뮬레이션.</b> 3배, 원금 1000 USDT 대비 증거금, 박스권(롱·숏), 헤지 모드 가정, 손절 없음, 수수료 0.05%(taker)·슬리피지 0.01%, 환급 80%는 별도 추정.<br>남은 단순화: Binance 1분봉으로 체결 판정(Gate 가격·괴리 검사 없음, 마크가격 대신 1분 종가), 지정가는 터치 시 전량 체결, 반복저점·가로막는 고저점 2겹·15분 횡보·삼각형 수렴·구출 변동폭 필터는 근사 구현, 최소 주문 단위/계약 정수 미반영, 펀딩비 제외, 앱 꺼짐/통신 오류 미반영.</small></div>
 <div id="meta"></div><div class="k" id="kpi"></div>
 <div class="box"><h3>가격 (15분봉) · 진입/청산 · 감지된 지지저항선</h3><div id="pc" style="height:420px"></div><div id="snap"></div></div>
 <div class="box"><h3>자산 곡선</h3><div id="ec" style="height:250px"></div></div>
@@ -12,7 +20,7 @@
 <div class="box"><h3>전략별</h3><table id="strat"></table></div>
 <div class="box"><h3>보유 포지션</h3><table id="pos"></table></div>
 <div class="box"><h3>거래 내역 (진입 근거 포함, 최신순)</h3><table id="tr"></table></div>
-<p><small>단순화한 시뮬레이션이며 앱의 실제 결과와 다를 수 있음. 5분마다 갱신.</small></p>
+</div><p><small>단순화한 시뮬레이션이며 앱의 실제 결과와 다를 수 있음. 5분마다 갱신.</small></p>
 <script>
 const U='https://raw.githubusercontent.com/yun2985-lab/gateladder-paper/data/data.json?t='+Date.now();
 const tbl=(id,rows,cols)=>{document.getElementById(id).innerHTML='<tr>'+cols.map(c=>'<th>'+c[0]+'</th>').join('')+'</tr>'+rows.map(r=>'<tr>'+cols.map(c=>'<td>'+(c[2]?c[2](r[c[1]],r):r[c[1]]??'')+'</td>').join('')+'</tr>').join('')};
@@ -36,4 +44,23 @@ mk.sort((a,b)=>a.time-b.time);cs.setMarkers(mk);
 const e=LightweightCharts.createChart(document.getElementById('ec'),{layout:{background:{color:'#fff'}},timeScale:{timeVisible:true}});
 const seen=new Set();e.addLineSeries().setData(d.equity_curve.map(x=>({time:ts(x[0])+32400,value:x[1]})).filter(p=>!seen.has(p.time)&&seen.add(p.time)));
 }).catch(err=>document.getElementById('meta').innerText='데이터 로드 실패: '+err);
+</script><script>
+function tab(x){document.getElementById('tabA').style.display=x=='A'?'':'none';document.getElementById('tabB').style.display=x=='B'?'':'none';location.hash=x;}
+if(location.hash=='#B')tab('B');
+const UA='https://raw.githubusercontent.com/yun2985-lab/gateladder-paper/data/data.json?t='+Date.now(),UB='https://raw.githubusercontent.com/yun2985-lab/gateladder-paper/data_v0961/data.json?t='+Date.now();
+const md=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/^_(.+)_$/gm,'<small>$1</small>').replace(/^- (.*)$/gm,'<li>$1</li>').replace(/\n\n/g,'<br>');
+const P=v=>v==null?'-':`<span class="${v>0?'w':'l'}">${v}</span>`;
+Promise.all([fetch(UA).then(r=>r.json()),fetch(UB).then(r=>r.json())]).then(([a,b])=>{
+document.getElementById('cmtb').innerHTML=b.commentary?md(b.commentary):'<small>의견 없음</small>';
+const rows=[['엔진',a.engine,b.engine],['기간 (KST)',a.start+' ~ '+a.end,b.start+' ~ '+b.end],['마지막 갱신',a.updated,b.updated],['현재 자산',a.equity,b.equity],['수익률 % (환급 제외)',P(a.ret_pct),P(b.ret_pct)],['환급 추정',a.rebate,b.rebate],['수익률 % (환급 포함)',P(a.ret_rebate_pct),P(b.ret_rebate_pct)],['최대낙폭 %',a.mdd_pct,b.mdd_pct],['청산 거래수',a.trades,b.trades],['승률 %',a.winrate??'-',b.winrate??'-'],['구출 발동',a.rescues.length,b.rescues.length],['72시간 초과 구출 알림','-',(b.alerts||[]).length],['보유 포지션',a.positions.length,b.positions.length],['강제청산',a.liquidated?'발생':'없음',b.liquidated?'발생':'없음']];
+document.getElementById('cmp').innerHTML='<tr><th>항목</th><th>A 0.9.56</th><th>B 0.9.61+추천</th></tr>'+rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('');
+const dm={};a.daily.forEach(x=>{(dm[x.date]=dm[x.date]||{date:x.date}).a=x});b.daily.forEach(x=>{(dm[x.date]=dm[x.date]||{date:x.date}).b=x});
+document.getElementById('cdaily').innerHTML='<tr><th>날짜</th><th>A 손익 %</th><th>A 거래/승</th><th>B 손익 %</th><th>B 거래/승</th></tr>'+Object.values(dm).sort((x,y)=>x.date<y.date?-1:1).map(r=>`<tr><td>${r.date}</td><td>${r.a?P(r.a.pnl_pct):'-'}</td><td>${r.a?r.a.trades+'/'+r.a.wins:'-'}</td><td>${r.b?P(r.b.pnl_pct):'-'}</td><td>${r.b?r.b.trades+'/'+r.b.wins:'-'}</td></tr>`).join('');
+tbl('cstrat',Object.entries(b.by_strategy).map(([k,v])=>({k,open:b.open_by_strat[k]||0,...v})),[['전략','k'],['청산수','n'],['승','wins'],['승률 %','winrate'],['손익 USDT(환급 전)','pnl',pc],['환급 포함','pnl_rebate',pc],['보유','open']]);
+tbl('cpos',b.positions,[['진입시각','opened'],['전략','strat'],['방향','side'],['진입가','entry'],['수량 BTC','qty'],['근거','info']]);
+tbl('ctr',[...b.trades_list].reverse(),[['진입','time_in'],['청산','time_out'],['전략','strat'],['방향','side'],['진입가','entry'],['청산가','exit'],['손익 USDT','pnl',pc],['환급 포함','pnl_rebate',pc],['결과','result'],['청산사유','why'],['진입 근거','info']]);
+const el=document.getElementById('cec');const show=()=>{if(el.dataset.done||el.offsetWidth==0)return;el.dataset.done=1;const c=LightweightCharts.createChart(el,{layout:{background:{color:'#fff'}},timeScale:{timeVisible:true}});
+[[a,'#36c'],[b,'#e80']].forEach(([d,col])=>{const sn=new Set();c.addLineSeries({color:col}).setData(d.equity_curve.map(x=>({time:ts(x[0])+32400,value:x[1]})).filter(p=>!sn.has(p.time)&&sn.add(p.time)))});c.timeScale().fitContent();};
+show();document.getElementById('bB').addEventListener('click',()=>setTimeout(show,0));
+}).catch(err=>document.getElementById('cmtb').innerText='비교 데이터 로드 실패: '+err);
 </script></body></html>
