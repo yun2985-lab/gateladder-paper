@@ -41,7 +41,7 @@ function live(d){
 const ra=d.rescue_active||{},rs=d.rescue_stats||{};
 hk.innerHTML=[['자산 (환급 포함)',d.equity],['수익률',pc(d.ret_pct)+'%'],['청산 거래',d.trades],['승률',(d.winrate??'-')+'%'],['MDD',d.mdd_pct+'%'],['보유 포지션',d.positions.length]].map(k=>`<div class="c">${k[0]}<b>${k[1]}</b></div>`).join('');
 ['lec','lpc'].forEach(i=>document.getElementById(i).innerHTML='');
-const opt={layout:{background:{color:'#1b2027'},textColor:'#ccc'},grid:{vertLines:{color:'#262c34'},horzLines:{color:'#262c34'}},timeScale:{timeVisible:true},rightPriceScale:{borderColor:'#333'}};
+const opt={autoSize:true,layout:{background:{color:'#1b2027'},textColor:'#ccc'},grid:{vertLines:{color:'#262c34'},horzLines:{color:'#262c34'}},timeScale:{timeVisible:true},rightPriceScale:{borderColor:'#333',minimumWidth:64,scaleMargins:{top:.1,bottom:.1}}};
 const e=LightweightCharts.createChart(lec,opt),es=e.addAreaSeries({lineColor:'#4fc3f7',topColor:'#4fc3f733',bottomColor:'#4fc3f700',lineWidth:2});const sn=new Set();
 es.setData(d.equity_curve.map(x=>({time:ts(x[0]),value:x[1]})).filter(p=>!sn.has(p.time)&&sn.add(p.time)));es.createPriceLine({price:1000,color:'#777',lineStyle:2,title:'1000'});e.timeScale().fitContent();
 const bs=Object.entries(d.by_strategy).filter(([k,v])=>v.n);
