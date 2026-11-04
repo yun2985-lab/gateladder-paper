@@ -34,7 +34,9 @@ const pc=v=>v==null?'-':`<span class="${v>0?'w':'l'}">${v}</span>`;
 const ts=s=>Math.floor(new Date(s.replace(' ','T')+':00+09:00')/1000)+32400;
 const md=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/^_(.+)_$/gm,'<small>$1</small>').replace(/^- (.*)$/gm,'<li>$1</li>').replace(/\n\n/g,'<br>');
 const NM={pat1:'선 돌파 1분',pat15:'선 돌파 15분',pat60:'선 돌파 1시간',pat240:'선 돌파 4시간',cyc:'손실 구출 추가분',tri1:'1분 삼각형 2%',fib1:'피보나치 1분',fib15:'피보나치 15분',fib60:'피보나치 1시간',fib240:'피보나치 4시간',rsi1:'1분 RSI',rsi15:'RSI 15분',rsi60:'RSI 1시간',brk60:'1시간 돌파 (꺼짐)',brk15:'15분 돌파 (꺼짐)',rescue:'구출 추가분'};
-const line=(el,sets)=>{const c=LightweightCharts.createChart(el,{layout:{background:{color:'#1b2027'},textColor:'#ccc'},grid:{vertLines:{color:'#262c34'},horzLines:{color:'#262c34'}},timeScale:{timeVisible:true}});sets.forEach(([d,col])=>{const sn=new Set();c.addLineSeries({color:col}).setData(d.equity_curve.map(x=>({time:ts(x[0]),value:x[1]})).filter(p=>!sn.has(p.time)&&sn.add(p.time)))});c.timeScale().fitContent()};
+const line=(el,sets)=>{const c=LightweightCharts.createChart(el,{layout:{background:{color:'#1b2027'},textColor:'#ccc'},grid:{vertLines:{color:'#262c34'},horzLines:{color:'#262c34'}},timeScale:{timeVisible:true}});sets.forEach(([d,col])=>{const sn=new Set();c.addLineSeries({color:col}).setData(d.equity_curve.map(x=>({time:ts(x[0]),value:x[1]})).filter(p=>!sn.has(p.time)&&sn.add(p.time)));VL(c,el,d,[...sn].sort((a,b)=>a-b))});c.timeScale().fitContent()};
+const VL=(c,el,d,times)=>{if(!d.size_switch||!times.length)return;const t0=Math.floor(d.size_switch/1000)+32400;const t=times.find(x=>x>=t0);if(t==null)return;el.style.position='relative';const v=document.createElement('div');v.style.cssText='position:absolute;top:0;bottom:28px;border-left:2px dashed #ffd54f;pointer-events:none;z-index:5';const lb=document.createElement('span');lb.textContent='투입시드 증가시점';lb.style.cssText='position:absolute;top:2px;left:4px;font-size:11px;color:#ffd54f;white-space:nowrap;background:#1b2027cc;padding:0 2px';v.appendChild(lb);el.appendChild(v);const f=()=>{const x=c.timeScale().timeToCoordinate(t);v.style.display=x==null?'none':'';if(x!=null)v.style.left=x+'px'};c.timeScale().subscribeVisibleTimeRangeChange(f);setTimeout(f,100);f()};
+const SWP={id:'sw',afterDraw(ch){const d=ch.config.options.swd;if(!d||!d.size_switch)return;const k=new Date(d.size_switch+32400000).toISOString().slice(5,10);const i=ch.data.labels.indexOf(k);if(i<0)return;const cw=ch.scales.x.width/ch.data.labels.length,fr=((d.size_switch+32400000)%86400000)/86400000,x=ch.scales.x.getPixelForValue(i)-cw/2+fr*cw,a=ch.chartArea,g=ch.ctx;g.save();g.strokeStyle='#ffd54f';g.lineWidth=2;g.setLineDash([5,4]);g.beginPath();g.moveTo(x,a.top);g.lineTo(x,a.bottom);g.stroke();g.fillStyle='#ffd54f';g.font='11px sans-serif';g.fillText('투입시드 증가시점',x+4,a.top+12);g.restore()}};
 Chart.defaults.color='#bbb';Chart.defaults.borderColor='#2a313a';const CJ={};
 const cj=(id,cfg)=>{if(CJ[id])CJ[id].destroy();CJ[id]=new Chart(document.getElementById(id),cfg)};
 function live(d){
@@ -43,11 +45,11 @@ hk.innerHTML=[['자산 (환급 포함)',d.equity],['수익률',pc(d.ret_pct)+'%'
 ['lec','lpc'].forEach(i=>document.getElementById(i).innerHTML='');
 const opt={autoSize:true,layout:{background:{color:'#1b2027'},textColor:'#ccc'},grid:{vertLines:{color:'#262c34'},horzLines:{color:'#262c34'}},timeScale:{timeVisible:true},rightPriceScale:{borderColor:'#333',minimumWidth:64,scaleMargins:{top:.1,bottom:.1}}};
 const e=LightweightCharts.createChart(lec,opt),es=e.addAreaSeries({lineColor:'#4fc3f7',topColor:'#4fc3f733',bottomColor:'#4fc3f700',lineWidth:2});const sn=new Set();
-es.setData(d.equity_curve.map(x=>({time:ts(x[0]),value:x[1]})).filter(p=>!sn.has(p.time)&&sn.add(p.time)));es.createPriceLine({price:1000,color:'#777',lineStyle:2,title:'1000'});e.timeScale().fitContent();
+es.setData(d.equity_curve.map(x=>({time:ts(x[0]),value:x[1]})).filter(p=>!sn.has(p.time)&&sn.add(p.time)));es.createPriceLine({price:1000,color:'#777',lineStyle:2,title:'1000'});e.timeScale().fitContent();VL(e,lec,d,[...sn].sort((a,b)=>a-b));
 const bs=Object.entries(d.by_strategy).filter(([k,v])=>v.n);
 cj('cS',{type:'bar',data:{labels:bs.map(([k])=>NM[k]||k),datasets:[{data:bs.map(([k,v])=>v.pnl),backgroundColor:bs.map(([k,v])=>v.pnl>=0?'#4caf7a':'#ef5350')}]},options:{indexAxis:'y',maintainAspectRatio:false,animation:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw+' USDT · '+bs[c.dataIndex][1].n+'건'}}}}});
 cj('cW',{type:'doughnut',data:{labels:['승 '+d.wins,'패 '+(d.trades-d.wins)],datasets:[{data:[d.wins,d.trades-d.wins],backgroundColor:['#4caf7a','#ef5350'],borderWidth:0}]},options:{maintainAspectRatio:false,animation:false,cutout:'65%',plugins:{legend:{position:'right'},title:{display:true,text:'승률 '+(d.winrate??'-')+'%'}}}});
-cj('cD',{type:'bar',data:{labels:d.daily.map(x=>x.date.slice(5)),datasets:[{data:d.daily.map(x=>x.pnl_pct),backgroundColor:d.daily.map(x=>x.pnl_pct>=0?'#4caf7a':'#ef5350')}]},options:{maintainAspectRatio:false,animation:false,plugins:{legend:{display:false}}}});
+cj('cD',{type:'bar',data:{labels:d.daily.map(x=>x.date.slice(5)),datasets:[{data:d.daily.map(x=>x.pnl_pct),backgroundColor:d.daily.map(x=>x.pnl_pct>=0?'#4caf7a':'#ef5350')}]},options:{swd:d,maintainAspectRatio:false,animation:false,plugins:{legend:{display:false}}},plugins:[SWP]});
 const mu=d.max_margin_usage_pct||0;
 cj('cG',{type:'bar',data:{labels:['최대 증거금 %'],datasets:[{data:[mu],backgroundColor:mu>50?'#ef5350':'#4caf7a'},{data:[100-mu],backgroundColor:'#333'}]},options:{indexAxis:'y',maintainAspectRatio:false,animation:false,scales:{x:{stacked:true,max:100},y:{stacked:true}},plugins:{legend:{display:false}}}});
 gtxt.innerHTML=`<small>최대 사용률 ${mu}% · 롱 구출: ${ra.L?'진행 중 '+ra.L.adds+'/20':'없음'} · 숏 구출: ${ra.S?'진행 중 '+ra.S.adds+'/20':'없음'} · 구출 누적 ${rs.count||0}회 · 강제청산 ${d.liquidated?'있음':'없음'}</small>`;
@@ -56,7 +58,7 @@ cs2.setData(d.candles.map(c=>({time:c[0]+32400,open:c[1],high:c[2],low:c[3],clos
 d.trades_list.forEach(t=>{const a=ts(t.time_in),b=ts(t.time_out);if(a>=m0)mk.push({time:a-a%900,position:t.side=='L'?'belowBar':'aboveBar',color:t.side=='L'?'#4caf7a':'#ef5350',shape:t.side=='L'?'arrowUp':'arrowDown'});if(b>=m0)mk.push({time:b-b%900,position:'aboveBar',color:t.pnl>0?'#8bc34a':'#ff7043',shape:'circle'})});
 d.positions.forEach(q=>{const a=ts(q.opened);if(a>=m0)mk.push({time:a-a%900,position:q.side=='L'?'belowBar':'aboveBar',color:q.strat=='cyc'?'#ffd54f':'#4fc3f7',shape:q.side=='L'?'arrowUp':'arrowDown',text:'보유'})});
 (d.rescues||[]).forEach(r=>{const a=Math.floor(r.t/1000)+32400;if(a>=m0)mk.push({time:a-a%900,position:'belowBar',color:'#ffd54f',shape:'square',text:'구출 '+r.side})});
-mk.sort((a,b)=>a.time-b.time);cs2.setMarkers(mk);p.timeScale().fitContent();
+mk.sort((a,b)=>a.time-b.time);cs2.setMarkers(mk);p.timeScale().fitContent();VL(p,lpc,d,d.candles.map(c=>c[0]+32400));
 upd.textContent='마지막 데이터 '+d.updated+' KST · 화면 갱신 '+new Date().toLocaleTimeString('ko-KR',{timeZone:'Asia/Seoul'})+' KST · 1분마다 자동 갱신';
 }
 function load(){Q='/data.json?t='+Date.now();
@@ -84,7 +86,7 @@ const t0b=t0-t0%900+32400,t1b=m.t1-m.t1%900+32400;if(t1b<=t0b)return;const ls=ch
 
 const m0=d.candles.length?d.candles[0][0]+32400:0,mk=[];
 d.trades_list.forEach(t=>{const a=ts(t.time_in),b=ts(t.time_out);if(a>=m0)mk.push({time:a-a%900,position:t.side=='L'?'belowBar':'aboveBar',color:'#36c',shape:t.side=='L'?'arrowUp':'arrowDown',text:t.strat});if(b>=m0)mk.push({time:b-b%900,position:'aboveBar',color:t.pnl>0?'#0a8':'#d33',shape:'circle',text:t.why})});
-(d.rescues||[]).forEach(r=>{const a=Math.floor(r.t/1000)+32400;if(a>=m0)mk.push({time:a-a%900,position:'belowBar',color:'#fb0',shape:'square',text:'구출 '+r.side})});mk.sort((a,b)=>a.time-b.time);cs.setMarkers(mk);line(ec,[[d,'#e80']]);
+(d.rescues||[]).forEach(r=>{const a=Math.floor(r.t/1000)+32400;if(a>=m0)mk.push({time:a-a%900,position:'belowBar',color:'#fb0',shape:'square',text:'구출 '+r.side})});mk.sort((a,b)=>a.time-b.time);cs.setMarkers(mk);VL(ch,document.getElementById('pc'),d,d.candles.map(c=>c[0]+32400));line(ec,[[d,'#e80']]);
 
 }).catch(err=>meta.innerText='데이터 로드 실패: '+err);}
 load();setInterval(load,60000);
