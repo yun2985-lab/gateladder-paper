@@ -69,7 +69,7 @@ function load(){Q='/data.json?t='+Date.now();tb1.className=V==1?'on':'';tb2.clas
 ['pc','ec'].forEach(i=>{const x=document.getElementById(i);if(x)x.innerHTML=''});
 fetch(R+(V==2?'data_y1':'data_latest')+Q,{cache:'no-store'}).then(r=>r.json()).then(d=>{
 document.querySelectorAll('.ivn').forEach(x=>x.textContent=d.candle_sec==86400?'일봉':'15분봉');v1note.style.display=V==1?'':'none';
-prog.style.display=V==2?'':'none';if(V==2)prog.innerHTML=`<small><b>버전2 · 1년 백테스트</b>: 현재 로직(0.9.115, 환급 70%, 실제 수수료, 본절 끔, 피보 0.722 포함, 고정 3배) + 현재 비율(선 돌파 8% · 피보 레벨당 5% · 구출 6% · 삼각형 6% · RSI 9%)을 처음부터 적용, 시드 1000 USDT, ${d.start} KST부터 재생 후 실시간 계속.${d.progress!=null?' <b style="color:#ffd54f">재생 진행 중 '+d.progress+'% (현재 '+d.last_bar+')</b>':' 실시간 진행 중'}${d.mdd_period?' · 최대낙폭 구간 '+d.mdd_period.peak+' → '+d.mdd_period.trough+' ('+d.mdd_period.pct+'%)':''}</small>`;
+prog.style.display=V==2?'':'none';if(V==2)prog.innerHTML=`<small><b>버전2 · 1년 백테스트</b>: 현재 로직(0.9.129, 환급 70%, 실제 수수료, 본절 끔, 피보 0.722 포함, 고정 3배) + 현재 비율(선 돌파 8% · 피보 레벨당 5% · 구출 6% · 삼각형 6% · RSI 9%)을 처음부터 적용, 시드 1000 USDT, ${d.start} KST부터 재생 후 실시간 계속.${d.progress!=null?' <b style="color:#ffd54f">재생 진행 중 '+d.progress+'% (현재 '+d.last_bar+')</b>':' 실시간 진행 중'}${d.mdd_period?' · 최대낙폭 구간 '+d.mdd_period.peak+' → '+d.mdd_period.trough+' ('+d.mdd_period.pct+'%)':''}</small>`;
 live(d);ver.textContent=d.version||'';
 cmtb.innerHTML=d.commentary?md(d.commentary):'<small>의견 없음</small>';
 meta.innerHTML=`<small>기간 ${d.start} ~ ${d.end} KST · 마지막 갱신 ${d.updated} KST · BTC ${d.price} · ${d.engine}</small>`;
