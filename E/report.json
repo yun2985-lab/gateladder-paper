@@ -1,0 +1,668 @@
+{
+  "version": "0.9.154",
+  "engine": "engine154",
+  "source_sha256": "e4d13173737caccb0d458097a4592905dfded3bd6ec706a5254bddc2fb72ae69",
+  "initial": 1000.0,
+  "start": "2025-11-04 00:00:00 KST",
+  "end": "2026-11-07 23:54:00 KST",
+  "last_bar_open": "2026-11-07 23:53:00 KST",
+  "status": "REPLAY_COMPLETE_FROZEN",
+  "comparison_baselines": {
+    "0.9.148": {
+      "source_path": "archive/pre_v2_0151_20261107_235035/live_y1/site_data/data.json",
+      "observed_at": "2026-11-07 23:50 KST",
+      "last_bar": "2026-11-07 23:50 KST",
+      "return_rebate70_pct": 1.008,
+      "mdd_raw_pct": 40.743,
+      "mdd_rebate_legacy_15m_approx_pct": 30.423,
+      "mdd_rebate_exact_minute_pct": null,
+      "max_margin_usage_pct": 85.84,
+      "cyc": {
+        "n": 6998,
+        "wins": 6998,
+        "winrate": 100.0,
+        "pnl": 184.924,
+        "pnl_rebate": 184.924
+      },
+      "notes": "Archived continuing-live sample, different endpoint; exact rebate minute curve unavailable. Compare raw MDD with raw and legacy approximation with legacy; do not compare approximate rebate curve against exact curve as same definition."
+    },
+    "0.9.138": {
+      "source_path": "archive/live_y1_0.9.138_20261107_120554/site_data/data.json",
+      "observed_at": "2026-11-07 12:05 KST",
+      "last_bar": "2026-11-07 12:05 KST",
+      "return_rebate70_pct": -6.606,
+      "mdd_raw_pct": 14.13,
+      "mdd_rebate_legacy_15m_approx_pct": 10.642,
+      "mdd_rebate_exact_minute_pct": null,
+      "max_margin_usage_pct": 29.33,
+      "cyc": {
+        "n": 237,
+        "wins": 237,
+        "winrate": 100.0,
+        "pnl": 12.383,
+        "pnl_rebate": 12.383
+      },
+      "notes": "Archived continuing-live sample, different endpoint; exact rebate minute curve unavailable. Compare raw MDD with raw and legacy approximation with legacy; do not compare approximate rebate curve against exact curve as same definition.",
+      "archival_mdd_label_note": "Past labels mixed;14.13 archived mdd_pct,10.642 old15m approximate rebate curve; exact minute rebate curve unavailable. Do not treat14.13 as known exact rebate MDD."
+    },
+    "user_reference": {
+      "v0148_return_rebate70_pct": 1.007,
+      "v0148_mdd_raw_pct": 40.743,
+      "v0148_mdd_rebate_legacy_approx_pct": 30.423,
+      "v0148_max_margin_usage_pct": 85.84,
+      "v0148_rescue_allocation_pct": 6,
+      "v0138_return_rebate70_pct": -6.608
+    },
+    "0.9.151_frozen_same_cutoff": {
+      "source_sha256": "4e598b46f2a702222ab9a987716f1f0fb8454504837dac83bb726ebbd0f621e3",
+      "start": "2025-11-04 00:00:00 KST",
+      "end": "2026-11-07 23:54:00 KST",
+      "equity_rebate70": 969.504754,
+      "return_rebate70_pct": -3.049525,
+      "mdd_raw_minute_pct": 30.148527,
+      "mdd_rebate70_exact_minute_pct": 23.060525,
+      "mdd_rebate70_legacy_15m_approx_pct": 23.18921,
+      "max_margin_usage_pct": 65.454011,
+      "margin50_skips": 1155,
+      "cyc": {
+        "sessions_count": 94,
+        "filled_add_count": 6304,
+        "fully_closed_add_count": 6292,
+        "closed_trade_records": 6292,
+        "realized_pnl_raw": 37.3092,
+        "realized_pnl_rebate70": 116.5231,
+        "open_at_end": {
+          "total": {
+            "count": 12,
+            "contracts": 72,
+            "qty": 0.0072,
+            "unrealized_gross": -82.67198,
+            "unrealized_after_entry_fee_rebate70": -82.703569,
+            "net_if_closed_at_mark_maker_rebate70_estimate": -82.733084
+          },
+          "L": {
+            "count": 6,
+            "contracts": 40,
+            "qty": 0.004,
+            "unrealized_gross": -60.55165,
+            "unrealized_after_entry_fee_rebate70": -60.571317,
+            "net_if_closed_at_mark_maker_rebate70_estimate": -60.587713
+          },
+          "S": {
+            "count": 6,
+            "contracts": 32,
+            "qty": 0.0032,
+            "unrealized_gross": -22.12033,
+            "unrealized_after_entry_fee_rebate70": -22.132253,
+            "net_if_closed_at_mark_maker_rebate70_estimate": -22.14537
+          }
+        }
+      },
+      "source_path": "archive/pre_v2_0152_20261108_023431/live_y1/replay_complete/report.json"
+    },
+    "0.9.152_frozen_same_cutoff": {
+      "source_sha256": "c03eb36d0370885764f048eaa513d607cec8f56e3261d49c0031804fc42362c1",
+      "start": "2025-11-04 00:00:00 KST",
+      "end": "2026-11-07 23:54:00 KST",
+      "equity_rebate70": 963.045159,
+      "return_rebate70_pct": -3.695484,
+      "mdd_raw_minute_pct": 27.334713,
+      "mdd_rebate70_exact_minute_pct": 19.6753,
+      "max_margin_usage_pct": 57.550795,
+      "margin50_skips": 7,
+      "repayment": {
+        "events": 196,
+        "contracts": 198,
+        "three_minute_batches": 196,
+        "realized_pnl_raw": -85.7825,
+        "realized_pnl_rebate70": -85.1221,
+        "budget_definition": "THIS session add realised PRICE profit + initial held realised PRICE pnl since start (source OfficeFeed.gross); fees/rebates excluded from bank, included in account/results. Gross losses debited once; no old-session add profit or pre-session held PnL.",
+        "estimated_fee_rate": 0.0005,
+        "actual_exit_taker_fee_rate": 0.00042,
+        "rebate_rate": 0.7
+      },
+      "cyc": {
+        "sessions_count": 78,
+        "filled_add_count": 7298,
+        "fully_closed_add_count": 7281,
+        "closed_trade_records": 7281,
+        "realized_pnl_raw": 47.6223,
+        "realized_pnl_rebate70": 138.7954,
+        "open_at_end": {
+          "total": {
+            "count": 17,
+            "contracts": 102,
+            "qty": 0.0102,
+            "unrealized_gross": -117.91237,
+            "unrealized_after_entry_fee_rebate70": -117.954452,
+            "net_if_closed_at_mark_maker_rebate70_estimate": -117.996264
+          },
+          "L": {
+            "count": 6,
+            "contracts": 40,
+            "qty": 0.004,
+            "unrealized_gross": -61.45958,
+            "unrealized_after_entry_fee_rebate70": -61.479296,
+            "net_if_closed_at_mark_maker_rebate70_estimate": -61.495692
+          },
+          "S": {
+            "count": 11,
+            "contracts": 62,
+            "qty": 0.006200000000000001,
+            "unrealized_gross": -56.45279,
+            "unrealized_after_entry_fee_rebate70": -56.475157,
+            "net_if_closed_at_mark_maker_rebate70_estimate": -56.500571
+          }
+        }
+      },
+      "rescue_sessions": {
+        "total": 78,
+        "completed": 76,
+        "ongoing": 2,
+        "longest_including_ongoing": {
+          "side": "L",
+          "start": "2026-04-10 18:19:00 KST",
+          "end": "2026-11-07 23:54:00 KST",
+          "hours": 5069.583333,
+          "ongoing": true,
+          "end_reason": null
+        },
+        "longest_completed": {
+          "side": "L",
+          "start": "2025-11-11 12:43:00 KST",
+          "end": "2026-04-10 18:18:00 KST",
+          "hours": 3605.583333,
+          "ongoing": false,
+          "end_reason": "legacy_recovery_or_held_finished"
+        }
+      },
+      "source_path": "archive/pre_v2_0153_20261108_045635/live_y1/replay_complete/report.json"
+    }
+  },
+  "price": 75910.9,
+  "equity_raw": 847.750166,
+  "equity_rebate70": 945.322082,
+  "return_raw_pct": -15.224983,
+  "return_rebate70_pct": -5.467792,
+  "mdd_raw_minute_pct": 28.302538,
+  "mdd_rebate70_exact_minute_pct": 25.223691,
+  "mdd_rebate70_legacy_15m_approx_pct": 25.301295,
+  "max_margin_usage_pct": 61.939718,
+  "fees": 139.388452,
+  "rebate70": 97.571917,
+  "liquidated": false,
+  "monthly": [
+    {
+      "month": "2025-11",
+      "start": 1000.0,
+      "end": 1014.533757,
+      "pnl_rebate_mtm": 14.533757,
+      "return_rebate_pct": 1.453376,
+      "realized_pnl_rebate": 14.5351,
+      "cyc_realized_pnl_rebate": 0.8721,
+      "trades": 318,
+      "first_bar_open": "2025-11-04 00:00:00 KST",
+      "last_bar_open": "2025-11-30 23:59:00 KST"
+    },
+    {
+      "month": "2025-12",
+      "start": 1014.533757,
+      "end": 1058.832256,
+      "pnl_rebate_mtm": 44.298499,
+      "return_rebate_pct": 4.36639,
+      "realized_pnl_rebate": 48.7651,
+      "cyc_realized_pnl_rebate": 8.6652,
+      "trades": 1230,
+      "first_bar_open": "2025-12-01 00:00:00 KST",
+      "last_bar_open": "2025-12-31 23:59:00 KST"
+    },
+    {
+      "month": "2026-01",
+      "start": 1058.832256,
+      "end": 1002.643015,
+      "pnl_rebate_mtm": -56.189241,
+      "return_rebate_pct": -5.306718,
+      "realized_pnl_rebate": 42.8494,
+      "cyc_realized_pnl_rebate": 9.6283,
+      "trades": 1357,
+      "first_bar_open": "2026-01-01 00:00:00 KST",
+      "last_bar_open": "2026-01-31 23:59:00 KST"
+    },
+    {
+      "month": "2026-02",
+      "start": 1002.643015,
+      "end": 851.49988,
+      "pnl_rebate_mtm": -151.143135,
+      "return_rebate_pct": -15.074471,
+      "realized_pnl_rebate": -1.8681,
+      "cyc_realized_pnl_rebate": 6.0126,
+      "trades": 297,
+      "first_bar_open": "2026-02-01 00:00:00 KST",
+      "last_bar_open": "2026-02-28 23:59:00 KST"
+    },
+    {
+      "month": "2026-03",
+      "start": 851.49988,
+      "end": 887.442559,
+      "pnl_rebate_mtm": 35.942679,
+      "return_rebate_pct": 4.221102,
+      "realized_pnl_rebate": 13.9489,
+      "cyc_realized_pnl_rebate": 9.0622,
+      "trades": 775,
+      "first_bar_open": "2026-03-01 00:00:00 KST",
+      "last_bar_open": "2026-03-31 23:59:00 KST"
+    },
+    {
+      "month": "2026-04",
+      "start": 887.442559,
+      "end": 913.924765,
+      "pnl_rebate_mtm": 26.482206,
+      "return_rebate_pct": 2.984104,
+      "realized_pnl_rebate": 5.7148,
+      "cyc_realized_pnl_rebate": 1.7982,
+      "trades": 249,
+      "first_bar_open": "2026-04-01 00:00:00 KST",
+      "last_bar_open": "2026-04-30 23:59:00 KST"
+    },
+    {
+      "month": "2026-05",
+      "start": 913.924765,
+      "end": 911.092959,
+      "pnl_rebate_mtm": -2.831806,
+      "return_rebate_pct": -0.309851,
+      "realized_pnl_rebate": -0.0458,
+      "cyc_realized_pnl_rebate": 1.0275,
+      "trades": 80,
+      "first_bar_open": "2026-05-01 00:00:00 KST",
+      "last_bar_open": "2026-05-31 23:59:00 KST"
+    },
+    {
+      "month": "2026-06",
+      "start": 911.092959,
+      "end": 840.691039,
+      "pnl_rebate_mtm": -70.40192,
+      "return_rebate_pct": -7.727194,
+      "realized_pnl_rebate": -0.1676,
+      "cyc_realized_pnl_rebate": 6.6035,
+      "trades": 323,
+      "first_bar_open": "2026-06-01 00:00:00 KST",
+      "last_bar_open": "2026-06-30 23:59:00 KST"
+    },
+    {
+      "month": "2026-07",
+      "start": 840.691039,
+      "end": 888.346599,
+      "pnl_rebate_mtm": 47.65556,
+      "return_rebate_pct": 5.668618,
+      "realized_pnl_rebate": 4.6175,
+      "cyc_realized_pnl_rebate": 7.4024,
+      "trades": 524,
+      "first_bar_open": "2026-07-01 00:00:00 KST",
+      "last_bar_open": "2026-07-31 23:59:00 KST"
+    },
+    {
+      "month": "2026-08",
+      "start": 888.346599,
+      "end": 916.651433,
+      "pnl_rebate_mtm": 28.304835,
+      "return_rebate_pct": 3.186238,
+      "realized_pnl_rebate": 11.9557,
+      "cyc_realized_pnl_rebate": 3.652,
+      "trades": 473,
+      "first_bar_open": "2026-08-01 00:00:00 KST",
+      "last_bar_open": "2026-08-31 23:59:00 KST"
+    },
+    {
+      "month": "2026-09",
+      "start": 916.651433,
+      "end": 919.922332,
+      "pnl_rebate_mtm": 3.270898,
+      "return_rebate_pct": 0.356831,
+      "realized_pnl_rebate": 0.328,
+      "cyc_realized_pnl_rebate": 3.4116,
+      "trades": 309,
+      "first_bar_open": "2026-09-01 00:00:00 KST",
+      "last_bar_open": "2026-09-30 23:59:00 KST"
+    },
+    {
+      "month": "2026-10",
+      "start": 919.922332,
+      "end": 941.90045,
+      "pnl_rebate_mtm": 21.978119,
+      "return_rebate_pct": 2.389128,
+      "realized_pnl_rebate": 0.0215,
+      "cyc_realized_pnl_rebate": 7.4672,
+      "trades": 676,
+      "first_bar_open": "2026-10-01 00:00:00 KST",
+      "last_bar_open": "2026-10-31 23:59:00 KST"
+    },
+    {
+      "month": "2026-11",
+      "start": 941.90045,
+      "end": 945.322082,
+      "pnl_rebate_mtm": 3.421632,
+      "return_rebate_pct": 0.363269,
+      "realized_pnl_rebate": -0.7032,
+      "cyc_realized_pnl_rebate": 2.0142,
+      "trades": 139,
+      "first_bar_open": "2026-11-01 00:00:00 KST",
+      "last_bar_open": "2026-11-07 23:53:00 KST"
+    }
+  ],
+  "cyc": {
+    "sessions_count": 83,
+    "filled_add_count": 3859,
+    "fully_closed_add_count": 3847,
+    "closed_trade_records": 3847,
+    "realized_pnl_raw": 23.4886,
+    "realized_pnl_rebate70": 67.617,
+    "open_at_end": {
+      "total": {
+        "count": 12,
+        "contracts": 63,
+        "qty": 0.0063,
+        "unrealized_gross": -56.32967,
+        "unrealized_after_entry_fee_rebate70": -56.354155,
+        "net_if_closed_at_mark_maker_rebate70_estimate": -56.37998
+      },
+      "L": {
+        "count": 4,
+        "contracts": 18,
+        "qty": 0.0018,
+        "unrealized_gross": -15.75735,
+        "unrealized_after_entry_fee_rebate70": -15.765579,
+        "net_if_closed_at_mark_maker_rebate70_estimate": -15.772958
+      },
+      "S": {
+        "count": 8,
+        "contracts": 45,
+        "qty": 0.0045000000000000005,
+        "unrealized_gross": -40.57232,
+        "unrealized_after_entry_fee_rebate70": -40.588575,
+        "net_if_closed_at_mark_maker_rebate70_estimate": -40.607022
+      }
+    }
+  },
+  "margin50_skips": 2156,
+  "margin50_skips_by_side": {
+    "L": 1060,
+    "S": 1096
+  },
+  "definitions": {
+    "mdd_raw": "Same engine minute-close raw wallet+unrealized equity, fees deducted, rebate excluded",
+    "mdd_rebate_exact": "Every minute close raw equity + ACTUAL cumulative70% rebates at that instant",
+    "mdd_legacy": "Only for old dashboard baseline comparability:15m raw curve + final total rebate apportioned by closed trade count, approximate",
+    "monthly": "Month-end minus prior month-end equity INCLUDING actual cumulative rebate70%; mark-to-market, includes open PnL; partial first/last months",
+    "max_margin": "Same existing minute-close engine metric margin/equity RAW; no guarantee<=50%, guard is pre-order only",
+    "cyc_realized": "Closed cyc trade pnl and pnl_rebate fields, both entry/exit fees allocated, rebate70 included in pnl_rebate",
+    "open": "Every STILL OPEN cyc add across all sessions, not just active-session additions; gross mark-to-market and remaining-entry-fee/rebate-aware PnL; prospective exit estimate separately labeled",
+    "skip": "Otherwise eligible new rescue-add third-tick signals blocked by pre-placement unrounded margin>=50%; not candle count, not rechecks; no fill-time or prospective cap",
+    "repayment": "3m sorted losing initial held first; only when none left SAME-session >=24h adds next. User ABS unit formula; exact mark +/-0.05%, no extra SLIP; estimate fee.05%, actualtaker.042%/rebate70%, proportional entry fees and residual original TP. Legacy100% closes held first but ROI<0 residual side keeps rescue.",
+    "old_add_targets": "Disabled: exact .152 held-only repayment/end when held gone",
+    "filter_counts": "Normal logical pending-entry plans / market attempts. Each new plan attempted once; rejected placement vs later pending cancellation separated. Per-rule counts overlap when multiple conditions match; totals are unique events, not sum-of-rules. Includes plans held by other baseline controls, NOT counterfactual successful fills exclusively prevented by filter. blocked_side_minutes counts each enabled rule once per side at minute-open; denominator side_minutes=2*replayed1m candles. No per-minute repeated cancellation counts.",
+    "filter_timing": "Minute OPEN currentprice, completed HTF close<=minuteopen; cancel normal pending BEFORE samebar fills. After on_1m, update completedUTC HTF with thisminute then close-bar placement uses minuteclose and newlycompletedHTF. Market triggers also checked at modeled triggerprice; minute OHLC cannot prove intrabar gate crossings. No queue/volume model; inherited fillmechanics unchanged.",
+    "missing_history": "ZIP fail-open for unknown; paper explicitly fetches70prewarmupdays publicUTC1h/4h/daily and HARDERROR if any enabled indicator unavailable. No silent disable. Inherited strategy13daywarmup untouched; filters have separate earlier lookback. WilderRSI14 seeded meanfirst14changes, flat=50.",
+    "switches": "UNTIL_ZERO false exactEngine29 .152; true exactEngine30 .153 heldpriority,24h same-session adds,persistentgrossbank,ROI>=0 end. SIDE_BLOCK only normal entry guard; new normal positions during active rescue NEVER appended to originalheld/bank. SideROI includes all current same-side positions, as baseline."
+  },
+  "repayment": {
+    "events": 293,
+    "contracts": 315,
+    "three_minute_batches": 289,
+    "realized_pnl_raw": -82.6955,
+    "realized_pnl_rebate70": -81.5983,
+    "budget_definition": "THIS session ALL add realised PRICE PnL, INCLUDING old-add repayment losses, plus original held realised PRICE PnL since start. Original held IDs/g0 remain while session active after all held gone; no reset/double spend. Prefee gross source bank; actual account/results include fees/rebate70.",
+    "estimated_fee_rate": 0.0005,
+    "actual_exit_taker_fee_rate": 0.00042,
+    "rebate_rate": 0.7,
+    "by_target": {
+      "HELD": {
+        "events": 293,
+        "contracts": 315,
+        "realized_pnl_raw": -82.6955,
+        "realized_pnl_rebate70": -81.5983
+      },
+      "OLD_ADDS": {
+        "events": 0,
+        "contracts": 0,
+        "realized_pnl_raw": 0,
+        "realized_pnl_rebate70": 0
+      }
+    }
+  },
+  "rescue_sessions": {
+    "total": 83,
+    "completed": 81,
+    "ongoing": 2,
+    "longest_including_ongoing": {
+      "side": "L",
+      "start": "2026-01-15 07:40:00 KST",
+      "end": "2026-06-22 10:25:00 KST",
+      "hours": 3794.75,
+      "ongoing": false,
+      "end_reason": "legacy_recovery_or_held_finished"
+    },
+    "longest_completed": {
+      "side": "L",
+      "start": "2026-01-15 07:40:00 KST",
+      "end": "2026-06-22 10:25:00 KST",
+      "hours": 3794.75,
+      "ongoing": false,
+      "end_reason": "legacy_recovery_or_held_finished"
+    }
+  },
+  "initial_held_open_at_end": {
+    "total": {
+      "count": 9,
+      "contracts": 61,
+      "qty": 0.0061,
+      "unrealized_gross": -108.52323,
+      "unrealized_after_entry_fee_rebate70": -108.551446
+    },
+    "L": {
+      "count": 6,
+      "contracts": 42,
+      "qty": 0.004200000000000001,
+      "unrealized_gross": -83.98894,
+      "unrealized_after_entry_fee_rebate70": -84.010692
+    },
+    "S": {
+      "count": 3,
+      "contracts": 19,
+      "qty": 0.0019,
+      "unrealized_gross": -24.53429,
+      "unrealized_after_entry_fee_rebate70": -24.540754
+    }
+  },
+  "trapped_total_at_end": {
+    "total": {
+      "count": 21,
+      "contracts": 124,
+      "qty": 0.012400000000000001,
+      "unrealized_gross": -164.8529,
+      "unrealized_after_entry_fee_rebate70": -164.9056
+    },
+    "L": {
+      "count": 10,
+      "contracts": 60,
+      "qty": 0.006,
+      "unrealized_gross": -99.74629,
+      "unrealized_after_entry_fee_rebate70": -99.776271
+    },
+    "S": {
+      "count": 11,
+      "contracts": 64,
+      "qty": 0.0064,
+      "unrealized_gross": -65.10661,
+      "unrealized_after_entry_fee_rebate70": -65.129329
+    }
+  },
+  "rescue_adds_age_at_end": {
+    "under24h": {
+      "total": {
+        "count": 1,
+        "contracts": 5,
+        "qty": 0.0005,
+        "unrealized_gross": -0.00695,
+        "unrealized_after_entry_fee_rebate70": -0.008999
+      },
+      "L": {
+        "count": 0,
+        "contracts": 0,
+        "qty": 0,
+        "unrealized_gross": 0,
+        "unrealized_after_entry_fee_rebate70": 0
+      },
+      "S": {
+        "count": 1,
+        "contracts": 5,
+        "qty": 0.0005,
+        "unrealized_gross": -0.00695,
+        "unrealized_after_entry_fee_rebate70": -0.008999
+      }
+    },
+    "at_least24h": {
+      "total": {
+        "count": 11,
+        "contracts": 58,
+        "qty": 0.0058000000000000005,
+        "unrealized_gross": -56.32272,
+        "unrealized_after_entry_fee_rebate70": -56.345156
+      },
+      "L": {
+        "count": 4,
+        "contracts": 18,
+        "qty": 0.0018,
+        "unrealized_gross": -15.75735,
+        "unrealized_after_entry_fee_rebate70": -15.765579
+      },
+      "S": {
+        "count": 7,
+        "contracts": 40,
+        "qty": 0.004,
+        "unrealized_gross": -40.56537,
+        "unrealized_after_entry_fee_rebate70": -40.579576
+      }
+    },
+    "eligible_current_session_old": {
+      "total": {
+        "count": 0,
+        "contracts": 0,
+        "qty": 0,
+        "unrealized_gross": 0,
+        "unrealized_after_entry_fee_rebate70": 0
+      },
+      "L": {
+        "count": 0,
+        "contracts": 0,
+        "qty": 0,
+        "unrealized_gross": 0,
+        "unrealized_after_entry_fee_rebate70": 0
+      },
+      "S": {
+        "count": 0,
+        "contracts": 0,
+        "qty": 0,
+        "unrealized_gross": 0,
+        "unrealized_after_entry_fee_rebate70": 0
+      }
+    },
+    "other_or_held_blocked_old": {
+      "total": {
+        "count": 11,
+        "contracts": 58,
+        "qty": 0.0058000000000000005,
+        "unrealized_gross": -56.32272,
+        "unrealized_after_entry_fee_rebate70": -56.345156
+      },
+      "L": {
+        "count": 4,
+        "contracts": 18,
+        "qty": 0.0018,
+        "unrealized_gross": -15.75735,
+        "unrealized_after_entry_fee_rebate70": -15.765579
+      },
+      "S": {
+        "count": 7,
+        "contracts": 40,
+        "qty": 0.004,
+        "unrealized_gross": -40.56537,
+        "unrealized_after_entry_fee_rebate70": -40.579576
+      }
+    }
+  },
+  "variant_id": "E",
+  "flags": {
+    "TREND": true,
+    "RSI": true,
+    "STRETCH": true,
+    "UNTIL_ZERO": false,
+    "SIDE_BLOCK": false
+  },
+  "normal_entry_counts": {
+    "L": 785,
+    "S": 1841
+  },
+  "filter_counts": {
+    "TREND": {
+      "placement_rejected": 70708,
+      "pending_cancelled": 762,
+      "blocked_side_minutes": 531354
+    },
+    "RSI": {
+      "placement_rejected": 6342,
+      "pending_cancelled": 225,
+      "blocked_side_minutes": 22680
+    },
+    "STRETCH": {
+      "placement_rejected": 28812,
+      "pending_cancelled": 195,
+      "blocked_side_minutes": 178957
+    }
+  },
+  "filter_totals": {
+    "placement_attempts": 133643,
+    "placement_rejected": 101457,
+    "pending_cancelled": 1182,
+    "side_minutes": 1062708
+  },
+  "normal_nonheld_open_at_end": {
+    "total": {
+      "count": 5,
+      "contracts": 26,
+      "unrealized_gross": -29.710339999999995,
+      "unrealized_after_entry_fee_rebate70": -29.720192991199994
+    },
+    "L": {
+      "count": 2,
+      "contracts": 8,
+      "unrealized_gross": -7.402400000000005,
+      "unrealized_after_entry_fee_rebate70": -7.406079080480006
+    },
+    "S": {
+      "count": 3,
+      "contracts": 18,
+      "unrealized_gross": -22.307939999999988,
+      "unrealized_after_entry_fee_rebate70": -22.31411391071999
+    }
+  },
+  "all_positions_at_end": {
+    "total": {
+      "count": 26,
+      "contracts": 150,
+      "unrealized_gross": -194.56324,
+      "unrealized_after_entry_fee_rebate70": -194.62579347256
+    },
+    "L": {
+      "count": 12,
+      "contracts": 68,
+      "unrealized_gross": -107.14869000000006,
+      "unrealized_after_entry_fee_rebate70": -107.18235051174005
+    },
+    "S": {
+      "count": 14,
+      "contracts": 82,
+      "unrealized_gross": -87.41454999999995,
+      "unrealized_after_entry_fee_rebate70": -87.44344296081995
+    }
+  }
+}
