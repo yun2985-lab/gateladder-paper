@@ -1,0 +1,93 @@
+{
+  "version": "0.9.164",
+  "branch": "data_0164",
+  "status": "COMPLETE_VERIFIED",
+  "conditions": [
+    "X1",
+    "X2",
+    "X3",
+    "X4",
+    "X5",
+    "X6"
+  ],
+  "completed_kst": "2026-11-09 02:11:22 KST",
+  "condition_completion_times_kst": {
+    "X1": "2026-11-09 02:11:22 KST",
+    "X2": "2026-11-09 02:10:58 KST",
+    "X3": "2026-11-09 02:10:37 KST",
+    "X4": "2026-11-09 02:11:16 KST",
+    "X5": "2026-11-09 02:10:40 KST",
+    "X6": "2026-11-09 02:10:44 KST"
+  },
+  "minutes_per_condition": 531354,
+  "condition_parameters": {
+    "X1": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 40,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90
+    },
+    "X2": {
+      "start_roi": -2.5,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 40,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90
+    },
+    "X3": {
+      "start_roi": -2,
+      "rescue_gap": 0.004,
+      "cyc_tp": 60,
+      "margin_pause": 40,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90
+    },
+    "X4": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 80,
+      "margin_pause": 40,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90
+    },
+    "X5": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 35,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90
+    },
+    "X6": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 40,
+      "rsi_lower": 27,
+      "rsi_upper": 73,
+      "market_tp": 90
+    }
+  },
+  "baseline": "B4=actual X1 annual TP90, not interpolated",
+  "round_counters_reset_by_user": true,
+  "automatic_improvement_round": "new-series1/5",
+  "m1_market": true,
+  "m1_tp_by_condition": {
+    "X1": 90,
+    "X2": 90,
+    "X3": 90,
+    "X4": 90,
+    "X5": 90,
+    "X6": 90
+  },
+  "manifest_sha256": "156b3f446284f4801862db87cec755b136316cb4eab9621aa1faea3570ad4650",
+  "publication_protocol": "Commit ONLY after all other remote files hash verified; DONE separate LAST commit then verify all files"
+}
