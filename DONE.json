@@ -1,0 +1,69 @@
+{
+  "version": "0.9.162",
+  "branch": "data_0162",
+  "status": "COMPLETE_VERIFIED",
+  "conditions": [
+    "W1",
+    "W2",
+    "W3",
+    "W4",
+    "W5",
+    "W6"
+  ],
+  "completed_kst": "2026-11-08 20:42:41 KST",
+  "condition_completion_times_kst": {
+    "W1": "2026-11-08 20:42:28 KST",
+    "W2": "2026-11-08 20:41:29 KST",
+    "W3": "2026-11-08 20:41:34 KST",
+    "W4": "2026-11-08 20:42:37 KST",
+    "W5": "2026-11-08 20:42:36 KST",
+    "W6": "2026-11-08 20:42:41 KST"
+  },
+  "minutes_per_condition": 531354,
+  "start_kst": "2025-11-04 00:00:00 KST",
+  "end_exclusive_kst": "2026-11-07 23:54:00 KST",
+  "held_block": false,
+  "condition_parameters": {
+    "W1": {
+      "start_roi_pct": -1,
+      "normal_cap_pct": 20,
+      "rsi_lower": 30,
+      "rsi_upper": 70
+    },
+    "W2": {
+      "start_roi_pct": -2,
+      "normal_cap_pct": 20,
+      "rsi_lower": 30,
+      "rsi_upper": 70
+    },
+    "W3": {
+      "start_roi_pct": -1.5,
+      "normal_cap_pct": 20,
+      "rsi_lower": 25,
+      "rsi_upper": 75
+    },
+    "W4": {
+      "start_roi_pct": -1.5,
+      "normal_cap_pct": 20,
+      "rsi_lower": 35,
+      "rsi_upper": 65
+    },
+    "W5": {
+      "start_roi_pct": -1.5,
+      "normal_cap_pct": 15,
+      "rsi_lower": 30,
+      "rsi_upper": 70
+    },
+    "W6": {
+      "start_roi_pct": -1.5,
+      "normal_cap_pct": 25,
+      "rsi_lower": 30,
+      "rsi_upper": 70
+    }
+  },
+  "baseline": "B2=frozen160U6",
+  "automatic_improvement_round": "3/5",
+  "all_supervisors_exit_code": 0,
+  "manifest_sha256": "9fed16c7095c43470ae6d1550142c45607db790060d6f4df95f3c04aaea5611e",
+  "publication_protocol": "Commit this file LAST, only after all other remote artifact hashes verified"
+}
