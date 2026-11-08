@@ -1,11 +1,13 @@
 {
   "schema": 1,
-  "profile": "V1_F3_GATE",
-  "label": "0.9.166 (F3)",
+  "profile": "V1_B5_GATE",
+  "strategy_origin": "0.9.166 (F3)",
+  "label_only_alias": true,
+  "label": "0.9.165 (B5)",
   "mode": "LIVE",
-  "bar_end_ms": 1794178560000,
-  "bar_end_kst": "2026-11-09 07:56:00 KST",
-  "prepared_kst": "2026-11-09 07:56:53 KST",
+  "bar_end_ms": 1794179040000,
+  "bar_end_kst": "2026-11-09 08:04:00 KST",
+  "prepared_kst": "2026-11-09 08:04:04 KST",
   "seed": 1000,
   "original_start_ms": 1793576760000,
   "original_start_kst": "2026-11-02 08:46:00 KST",
@@ -26,11 +28,11 @@
   },
   "base_engine166_sha256": "a7c9a0b4aa585a59ed38843184fed8eea831537569efd26e67797e2c156dd77e",
   "pinned_files": {
-    "config.json": "538c4414ce840f591d747ae67c6c28b51edd6d446041dbbc8e1387e63044edd4",
-    "run_live.py": "568e69b9e6e979f0ec8f06c6a7dc0ce4e18bcdc994bffdf288cb9b786e518ba3",
-    "summary.py": "4c7119d832cfab44b8907a381e486310ebb9438a4b491c2602a45b244992148e"
+    "config.json": "98639a2b846e949123087fa2525e2256157025817f211c4cfefb976a49e294ea",
+    "run_live.py": "2e50a9484f1b932855ce433171ce0dad4c4702c2a609977cb009e1e3a596863e",
+    "summary.py": "4825d3fb8304a7ab136dcd1be3f80ef198eb9fcc75eadd9160f3a529a8e32d71"
   },
-  "snapshot_state_sha256": "9dc85dfc2ad849d5db3f220b8015b53c658b95d3a2024c2f62b70f52550236b3",
+  "snapshot_state_sha256": "ae0092815bf364ffe9e1d8c281a3ce0272d986e61984894967180a18f94ed9b6",
   "chart_template_sha256": "a5810d5b2ffff116ca4d82eadbc6ce08d82a57d573a68c5f3111c98d37827208",
   "chart_source": "public Binance settled15m",
   "coherence": "captured summary/accounting last row matches settled state; PNG rendered from captured JSON/state",
@@ -41,6 +43,6 @@
     "data.json",
     "dash.png"
   ],
-  "optional_audit_path": "V1_F3_DEPLOYMENT.json",
+  "optional_audit_path": "V1_B5_DEPLOYMENT.json",
   "publication_performed": false
 }
