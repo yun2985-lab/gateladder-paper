@@ -1,19 +1,31 @@
 {
-  "prepared_kst": "2026-11-09 06:16:44 KST",
-  "cutover_kst": "2026-11-09 06:09:08 KST",
+  "schema": 1,
+  "profile": "V1_B4_GATE",
   "label": "0.9.163 (B4)",
   "mode": "LIVE",
-  "data_bar_end_kst": "2026-11-09 06:16:00 KST",
+  "bar_end_ms": 1794172800000,
+  "bar_end_kst": "2026-11-09 06:20:00 KST",
+  "prepared_kst": "2026-11-09 06:20:51 KST",
   "seed": 1000,
+  "original_start_ms": 1793576760000,
   "original_start_kst": "2026-11-02 08:46:00 KST",
-  "fees": {
+  "fees_actual": {
     "maker": 0.0002,
     "taker": 0.00045,
     "rebate": 0.7
   },
+  "repayment_estimate": 0.0005,
   "source_sha256": "b3b497369b7c5566722cf9c1ee7d4c99ac78252354fcd9ece3b8f1f628bef647",
-  "config_sha256": "91daed57759f85f39424693f52b491ce6d2f3aa15ebf31fe069c931be5698c9b",
-  "archive_sha256": "c4e6209c0409b10ea79c88d2429ac1db036d4d8a414a5fdee3a573c4ab14ef97",
+  "pinned_files": {
+    "config.json": "91daed57759f85f39424693f52b491ce6d2f3aa15ebf31fe069c931be5698c9b",
+    "run_live.py": "8e68056ec201397bf11712187f5bec25a4bf24bdc6d6f304b24b34b8b0f0e331",
+    "summary.py": "021e918a304c19bb06a2b53bebcf58978ecd8737768fcf09be93775a1d0b1a50"
+  },
+  "snapshot_state_sha256": "8861ac34bc0b2c519f8e0ac326dd451b84a9b9af71519cc4cb9608e1dff18562",
+  "chart_template_sha256": "a5810d5b2ffff116ca4d82eadbc6ce08d82a57d573a68c5f3111c98d37827208",
+  "chart_source": "public Binance settled15m",
+  "coherence": "captured summary/accounting last row matches settled state; PNG rendered from captured JSON/state",
+  "max_export_age_seconds": 720,
   "target_repository": "yun2985-lab/gateladder-paper",
   "target_branch": "data_latest",
   "publish_paths": [
@@ -21,14 +33,5 @@
     "dash.png"
   ],
   "optional_audit_path": "V1_B4_DEPLOYMENT.json",
-  "preserve_history": true,
-  "no_UI_code_change": true,
-  "publication_performed": false,
-  "new_runner_automatic_publishing": false,
-  "preserved_publisher": "/workspace/gateladder_bt/live_latest/publish.py",
-  "preserved_repository_path": "/workspace/gateladder_bt/live_latest/site_data",
-  "chart_source": "public Binance closed15m",
-  "full_replay_rows": 9912,
-  "preactivation_postlive_audit_rows": 9920,
-  "postactivation_proof": "/workspace/gateladder_bt/live_latest/deployment_verification_B4.json"
+  "publication_performed": false
 }
