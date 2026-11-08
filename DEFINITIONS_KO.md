@@ -1,0 +1,13 @@
+# 동결 .159 지표 및 소스 정의
+- 기간: 2025-11-04 00:00 KST 포함 ~ 2026-11-07 23:54 KST 제외, 마지막 1분봉 시작23:53. 각 seed1000,531354분. completed HTF는 UTC 경계. 필터70일·전략13일 warmup.
+- 환급 수익률/equity는 실제 누적70% 환급 포함. raw는 환급 제외, 실제 수수료 차감. raw MDD와 정확환급 MDD는 각각 매 분 마감 equity의 고점 대비 하락. legacy 15분 근사는 사용하지 않음.
+- 월별은 환급 포함 MTM equity 차이/직전월말 대비 수익률. 포지션 미실현 포함. 첫/마지막 부분 월 포함. CSV의 반올림 마지막 자리 오차는 원장 정확값과 구분.
+- 모든 조건 margin_guard_threshold_pct=50. (equity-available)/equity의 반올림 전 수치가50% 이상이면 새 구출 주문만 스킵, 다음3틱까지 대기. 이후 변동/체결로 최대마진50% 초과 가능. 동결 report의 공통 설명 40/50은 상속된 문구이며 이번 조건은 모두50.
+- 구출 동시20은 현재 세션의 filled/still-open adds. TP가 슬롯을 해제. 모든 현재 세션 open add 대비0.3%간격; denominator/반올림은 기존 .158 engine 그대로. H2 available2%, 나머지3%, fixed3배. T1/H4 cyc TP가격폭60, 나머지38; 일반TP 불변.
+- HELD_BLOCK ON은 H1/H2/H3/H4. 실제 잔여 held 일반계약이 있으면 해당 방향 일반 진입 차단. 잔여가 없으면 구출 중에도 필터/normal20% cap 적용하여 진입 허용. 편입 ROI는 mark/basis rounded12 HALF_EVEN ×100×3이며 해당 START 이하. 사용자 pt139u 승인: H3 시작/편입 모두−3%, H1/H2/H4 모두−1.5%. S1 시작−3%, T1 시작−1.5%, 둘은 HELD_BLOCK OFF라 편입0.
+- 정확 .152 held-only 갚기: 이번 세션 adds 실현 PRICE PnL + 원래 held는 시작 이후, 편입 held는 편입 g0 이후 실현 PRICE PnL. bank는 수수료/환급 제외; 계좌/결과에는 실제 maker.018%/taker.042% 및70%환급 반영. OLD_ADDS 갚기0. UNTIL_ZERO/NEED_HELD/POS30/STRETCH OFF. 동결 report.definitions.repayment에 남은 inherited24h-add 설명은 이번 조건에 적용되지 않음; repayment.budget_definition과 OLD_ADDS events0이 실제 동작. 동결 원본 JSON은 해시보존 때문에 수정하지 않음.
+- held_adoption_events는 개별 일반거래 편입 수, batches와 contracts 별도. 편입은 cash/fee/bank 변동 없음. 기존 실현 g0 재사용 금지. 갚기 ownership/bank/수량/실제exit를 전체 거래원장에서 독립 재구성.
+- 블록 L/S 시간은 실제 PRE-step 상태를 분별 적분/60, 겹친 거래 보유시간 합산 아님. starts/adopts/closes의 다음 분 상태 및 POST-step도 검증. 종료잔여 held/adds/normal_nonheld는 보고서의 각 total/L/S와 계약수·UPNL 사용. initial_held_open_at_end는 상속 이름으로 편입 held도 포함하며 held_open_at_end가 동의 별칭.
+- filters.csv의 규칙별 카운트는 서로 중첩 가능. TOTAL_UNIQUE는 같은 이벤트/side-minute 한 번만. 논리적 신호/시장시도 거절과 pending cancellation이지 성공했을 가상체결을 단정하는 지표 아님. RSI/TREND는 완료된 HTF만, pending 취소는 체결 전. OHLC 모의는 실제 호가/큐/슬리피지·장중 경로를 보증하지 않음.
+- 전체 진입 CSV는 기존44열/첫22열 보존. 실제 entry audit 수수료와 원래TP, TP2/TP3 실제 exits 사용. 독립 재생성 CSV가 원본 SHA256와 일치, 모든531354분 cash/equity/rebate/margin/fee/계약 원장 대조 완료.
+- A2 .156 동결 baseline은 재실행하지 않음: 환급+6.543930%, raw−5.892205%, raw MDD18.208494%, 정확환급12.307737%, 최대마진52.552232%. .154A: 환급+3.907320%, raw MDD19.925548%, 정확13.309198%, 마진51.814327%.
