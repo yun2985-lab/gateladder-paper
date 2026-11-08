@@ -1,0 +1,106 @@
+{
+  "version": "0.9.165",
+  "branch": "data_0165",
+  "status": "COMPLETE_VERIFIED",
+  "conditions": [
+    "Y1",
+    "Y2",
+    "Y3",
+    "Y4",
+    "Y5",
+    "Y6"
+  ],
+  "completed_kst": "2026-11-09 04:42:57 KST",
+  "condition_completion_times_kst": {
+    "Y1": "2026-11-09 04:41:59 KST",
+    "Y2": "2026-11-09 04:42:57 KST",
+    "Y3": "2026-11-09 04:42:05 KST",
+    "Y4": "2026-11-09 04:42:12 KST",
+    "Y5": "2026-11-09 04:41:59 KST",
+    "Y6": "2026-11-09 04:42:20 KST"
+  },
+  "minutes_per_condition": 531354,
+  "condition_parameters": {
+    "Y1": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 30,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90,
+      "normal_cap": 20,
+      "max_open": 20
+    },
+    "Y2": {
+      "start_roi": -1.5,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 35,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90,
+      "normal_cap": 20,
+      "max_open": 20
+    },
+    "Y3": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 70,
+      "margin_pause": 35,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90,
+      "normal_cap": 20,
+      "max_open": 20
+    },
+    "Y4": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 35,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90,
+      "normal_cap": 25,
+      "max_open": 20
+    },
+    "Y5": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 35,
+      "rsi_lower": 25,
+      "rsi_upper": 75,
+      "market_tp": 90,
+      "normal_cap": 20,
+      "max_open": 20
+    },
+    "Y6": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 35,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90,
+      "normal_cap": 20,
+      "max_open": 25
+    }
+  },
+  "baseline": "B4=frozen164X1 not rerun",
+  "round_counters_reset_by_user": false,
+  "automatic_improvement_round": "new-series2/5",
+  "no_improvement_count_before_round": 1,
+  "m1_market": true,
+  "m1_tp_by_condition": {
+    "Y1": 90,
+    "Y2": 90,
+    "Y3": 90,
+    "Y4": 90,
+    "Y5": 90,
+    "Y6": 90
+  },
+  "manifest_sha256": "c3bbf757f44e0eb7db1d9a9ce237cd4a0186621f34251fe364d472f7fbc58b68",
+  "publication_protocol": "Commit ONLY after all other remote files hash verified; DONE separate LAST commit then verify all files"
+}
