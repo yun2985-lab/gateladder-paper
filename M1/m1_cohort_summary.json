@@ -1,0 +1,438 @@
+{
+  "cohort": "m1_market",
+  "definitions": {
+    "cohort": "ONLY 1m PatternRun trend/flat/learned/manual; excludes bounce/divergence/channel/TriangleRun and other TF.",
+    "pnl": "Each original parent entry ONCE: exact realized price gross + residual mark UPNL - FULL original entry fee - actual exit fees. Rebate adds70% actual entry/exit fees ONCE. Partial repayment lifecycle remains same parent; no hypothetical exit fee.",
+    "tp_success": "ALL initial contracts closed by normal TP1 at original target; rescue/partial-repay+TP and profitable salvage are NOT full TP success. Denominator ALL cohort parent entries incl right-censored open; completed-only fraction separate.",
+    "holding": "Timestamp is minute-open label. Completed duration includes extra minute for known minute-CLOSE rescue repayment/held close. Intrabar TP/liq time unknown; market bar-label duration is lower bound. Retest entry time is also unknown within entry minute, so bar-label duration can differ in either direction by<1min. Per-entry lower/upper duration bounds supplied. Open entries right-censored at replay cutoff; completed/all-observed means separate.",
+    "excursions": "USDT PRICE widths, not ROI or contract PnL. PRIMARY conservative boundary-safe observed LOWER BOUNDS. Market entries at minute OPEN include entry bar only while still open through its end. Retest entry bar OHLC excluded (pre-entry unknown). Final intrabar TP/liquidation bar OHLC excluded (post-exit unknown), but exact execution prices included. Known close-time final rescue_repay152/rescue_hold_100% uses whole terminal bar if parent existed at bar OPEN. Open parents include last completed bar. Partial exits do not end lifecycle while quantity remains. Unknown intrabar boundary excursions NOT treated as observed; quantiles/touchrates may underestimate actuals, no assumed ordering.",
+    "quantiles": "numpy linear percentile25/50/75/90 on nonnegative per-parent conservative excursion lower bounds; empty=NULL. Touch count/rate uses >=width lower bound; denominator ALL entries including censored, not just winners. No post-exit movement. Same method for frozen B3 retest cohort.",
+    "provenance": "Market exact source signal key/confirmation time/line audit stored. B3 family/TF from frozen pat1/info; historical candidate key only when observational join unique; ambiguous/missing keys NULL and matching candidates disclosed. No B3 annual replay."
+  },
+  "all": {
+    "trades": 45,
+    "L": 6,
+    "S": 39,
+    "completed": 45,
+    "final_open": 0,
+    "final_held": 0,
+    "full_tp_successes": 43,
+    "tp_success_fraction_all": 0.9555555555555556,
+    "tp_success_fraction_completed": 0.9555555555555556,
+    "pnl_raw_sum": -2.047884285200233,
+    "pnl_raw_mean": -0.04550853967111629,
+    "pnl_rebate70_sum": 1.494986714439767,
+    "pnl_rebate70_mean": 0.03322192698755038,
+    "holding_minutes_observed_mean": 571.8222222222222,
+    "holding_minutes_lower_mean": 571.8222222222222,
+    "holding_minutes_upper_mean": 572.8,
+    "holding_minutes_completed_mean": 571.8222222222222,
+    "ever_held_fraction": 0.022222222222222223,
+    "mfe_usdt_lower_bound_quantiles": {
+      "25": 29.999999999992724,
+      "50": 30.0,
+      "75": 30.0,
+      "90": 30.0
+    },
+    "mae_usdt_lower_bound_quantiles": {
+      "25": 0.0,
+      "50": 39.80000000000291,
+      "75": 104.0,
+      "90": 191.27999999999014
+    },
+    "mfe_touch_lower_bound": {
+      "30": {
+        "count": 44,
+        "fraction": 0.9777777777777777
+      },
+      "50": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "80": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "120": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "200": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "300": {
+        "count": 0,
+        "fraction": 0.0
+      }
+    },
+    "boundary_censored_entries": 0,
+    "boundary_censored_exits": 44
+  },
+  "L": {
+    "trades": 6,
+    "L": 6,
+    "S": 0,
+    "completed": 6,
+    "final_open": 0,
+    "final_held": 0,
+    "full_tp_successes": 6,
+    "tp_success_fraction_all": 1.0,
+    "tp_success_fraction_completed": 1.0,
+    "pnl_raw_sum": -0.3692558219999741,
+    "pnl_raw_mean": -0.06154263699999568,
+    "pnl_rebate70_sum": 0.18742325340002597,
+    "pnl_rebate70_mean": 0.031237208900004327,
+    "holding_minutes_observed_mean": 9.333333333333334,
+    "holding_minutes_lower_mean": 9.333333333333334,
+    "holding_minutes_upper_mean": 10.333333333333334,
+    "holding_minutes_completed_mean": 9.333333333333334,
+    "ever_held_fraction": 0.0,
+    "mfe_usdt_lower_bound_quantiles": {
+      "25": 30.0,
+      "50": 30.0,
+      "75": 30.0,
+      "90": 30.000000000007276
+    },
+    "mae_usdt_lower_bound_quantiles": {
+      "25": 42.325000000004366,
+      "50": 74.5,
+      "75": 100.97500000000218,
+      "90": 301.15000000000146
+    },
+    "mfe_touch_lower_bound": {
+      "30": {
+        "count": 6,
+        "fraction": 1.0
+      },
+      "50": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "80": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "120": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "200": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "300": {
+        "count": 0,
+        "fraction": 0.0
+      }
+    },
+    "boundary_censored_entries": 0,
+    "boundary_censored_exits": 6
+  },
+  "S": {
+    "trades": 39,
+    "L": 0,
+    "S": 39,
+    "completed": 39,
+    "final_open": 0,
+    "final_held": 0,
+    "full_tp_successes": 37,
+    "tp_success_fraction_all": 0.9487179487179487,
+    "tp_success_fraction_completed": 0.9487179487179487,
+    "pnl_raw_sum": -1.6786284632002588,
+    "pnl_raw_mean": -0.043041755466673305,
+    "pnl_rebate70_sum": 1.3075634610397413,
+    "pnl_rebate70_mean": 0.03352726823178824,
+    "holding_minutes_observed_mean": 658.3589743589744,
+    "holding_minutes_lower_mean": 658.3589743589744,
+    "holding_minutes_upper_mean": 659.3333333333334,
+    "holding_minutes_completed_mean": 658.3589743589744,
+    "ever_held_fraction": 0.02564102564102564,
+    "mfe_usdt_lower_bound_quantiles": {
+      "25": 29.999999999992724,
+      "50": 30.0,
+      "75": 30.0,
+      "90": 30.0
+    },
+    "mae_usdt_lower_bound_quantiles": {
+      "25": 0.0,
+      "50": 38.80000000000291,
+      "75": 99.94999999999709,
+      "90": 181.959999999989
+    },
+    "mfe_touch_lower_bound": {
+      "30": {
+        "count": 38,
+        "fraction": 0.9743589743589743
+      },
+      "50": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "80": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "120": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "200": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "300": {
+        "count": 0,
+        "fraction": 0.0
+      }
+    },
+    "boundary_censored_entries": 0,
+    "boundary_censored_exits": 38
+  },
+  "families": {
+    "trend": {
+      "trades": 33,
+      "L": 3,
+      "S": 30,
+      "completed": 33,
+      "final_open": 0,
+      "final_held": 0,
+      "full_tp_successes": 31,
+      "tp_success_fraction_all": 0.9393939393939394,
+      "tp_success_fraction_completed": 0.9393939393939394,
+      "pnl_raw_sum": -1.4966717792001896,
+      "pnl_raw_mean": -0.04535369027879362,
+      "pnl_rebate70_sum": 1.0576504662398105,
+      "pnl_rebate70_mean": 0.032050014128479104,
+      "holding_minutes_observed_mean": 777.969696969697,
+      "holding_minutes_lower_mean": 777.969696969697,
+      "holding_minutes_upper_mean": 778.939393939394,
+      "holding_minutes_completed_mean": 777.969696969697,
+      "ever_held_fraction": 0.030303030303030304,
+      "mfe_usdt_lower_bound_quantiles": {
+        "25": 29.999999999992724,
+        "50": 30.0,
+        "75": 30.0,
+        "90": 30.0
+      },
+      "mae_usdt_lower_bound_quantiles": {
+        "25": 0.0,
+        "50": 38.80000000000291,
+        "75": 104.39999999999418,
+        "90": 195.9399999999907
+      },
+      "mfe_touch_lower_bound": {
+        "30": {
+          "count": 32,
+          "fraction": 0.9696969696969697
+        },
+        "50": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "80": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "120": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "200": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "300": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      },
+      "boundary_censored_entries": 0,
+      "boundary_censored_exits": 32
+    },
+    "flat": {
+      "trades": 12,
+      "L": 3,
+      "S": 9,
+      "completed": 12,
+      "final_open": 0,
+      "final_held": 0,
+      "full_tp_successes": 12,
+      "tp_success_fraction_all": 1.0,
+      "tp_success_fraction_completed": 1.0,
+      "pnl_raw_sum": -0.5512125060000435,
+      "pnl_raw_mean": -0.04593437550000362,
+      "pnl_rebate70_sum": 0.43733624819995653,
+      "pnl_rebate70_mean": 0.036444687349996376,
+      "holding_minutes_observed_mean": 4.916666666666667,
+      "holding_minutes_lower_mean": 4.916666666666667,
+      "holding_minutes_upper_mean": 5.916666666666667,
+      "holding_minutes_completed_mean": 4.916666666666667,
+      "ever_held_fraction": 0.0,
+      "mfe_usdt_lower_bound_quantiles": {
+        "25": 29.999999999992724,
+        "50": 30.0,
+        "75": 30.0,
+        "90": 30.0
+      },
+      "mae_usdt_lower_bound_quantiles": {
+        "25": 0.0,
+        "50": 50.799999999995634,
+        "75": 85.47500000000218,
+        "90": 158.45000000000002
+      },
+      "mfe_touch_lower_bound": {
+        "30": {
+          "count": 12,
+          "fraction": 1.0
+        },
+        "50": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "80": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "120": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "200": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "300": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      },
+      "boundary_censored_entries": 0,
+      "boundary_censored_exits": 12
+    },
+    "learned": {
+      "trades": 0,
+      "L": 0,
+      "S": 0,
+      "completed": 0,
+      "final_open": 0,
+      "final_held": 0,
+      "full_tp_successes": 0,
+      "tp_success_fraction_all": null,
+      "tp_success_fraction_completed": null,
+      "pnl_raw_sum": 0,
+      "pnl_raw_mean": null,
+      "pnl_rebate70_sum": 0,
+      "pnl_rebate70_mean": null,
+      "holding_minutes_observed_mean": null,
+      "holding_minutes_lower_mean": null,
+      "holding_minutes_upper_mean": null,
+      "holding_minutes_completed_mean": null,
+      "ever_held_fraction": null,
+      "mfe_usdt_lower_bound_quantiles": {
+        "25": null,
+        "50": null,
+        "75": null,
+        "90": null
+      },
+      "mae_usdt_lower_bound_quantiles": {
+        "25": null,
+        "50": null,
+        "75": null,
+        "90": null
+      },
+      "mfe_touch_lower_bound": {
+        "30": {
+          "count": 0,
+          "fraction": null
+        },
+        "50": {
+          "count": 0,
+          "fraction": null
+        },
+        "80": {
+          "count": 0,
+          "fraction": null
+        },
+        "120": {
+          "count": 0,
+          "fraction": null
+        },
+        "200": {
+          "count": 0,
+          "fraction": null
+        },
+        "300": {
+          "count": 0,
+          "fraction": null
+        }
+      },
+      "boundary_censored_entries": 0,
+      "boundary_censored_exits": 0
+    },
+    "manual": {
+      "trades": 0,
+      "L": 0,
+      "S": 0,
+      "completed": 0,
+      "final_open": 0,
+      "final_held": 0,
+      "full_tp_successes": 0,
+      "tp_success_fraction_all": null,
+      "tp_success_fraction_completed": null,
+      "pnl_raw_sum": 0,
+      "pnl_raw_mean": null,
+      "pnl_rebate70_sum": 0,
+      "pnl_rebate70_mean": null,
+      "holding_minutes_observed_mean": null,
+      "holding_minutes_lower_mean": null,
+      "holding_minutes_upper_mean": null,
+      "holding_minutes_completed_mean": null,
+      "ever_held_fraction": null,
+      "mfe_usdt_lower_bound_quantiles": {
+        "25": null,
+        "50": null,
+        "75": null,
+        "90": null
+      },
+      "mae_usdt_lower_bound_quantiles": {
+        "25": null,
+        "50": null,
+        "75": null,
+        "90": null
+      },
+      "mfe_touch_lower_bound": {
+        "30": {
+          "count": 0,
+          "fraction": null
+        },
+        "50": {
+          "count": 0,
+          "fraction": null
+        },
+        "80": {
+          "count": 0,
+          "fraction": null
+        },
+        "120": {
+          "count": 0,
+          "fraction": null
+        },
+        "200": {
+          "count": 0,
+          "fraction": null
+        },
+        "300": {
+          "count": 0,
+          "fraction": null
+        }
+      },
+      "boundary_censored_entries": 0,
+      "boundary_censored_exits": 0
+    }
+  },
+  "provenance_status_counts": {
+    "exact_market_audit": 45
+  },
+  "annual_baseline_rerun": false
+}
