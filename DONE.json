@@ -1,0 +1,40 @@
+{
+  "version": "0.9.169",
+  "branch": "data_0169",
+  "status": "COMPLETE_VERIFIED",
+  "runs": [
+    "T1_Y2024",
+    "T1_Y2025",
+    "T2_Y2024",
+    "T2_Y2025",
+    "T3_Y2024",
+    "T3_Y2025",
+    "T4_Y2024",
+    "T4_Y2025",
+    "T5_Y2024",
+    "T5_Y2025",
+    "T6_Y2024",
+    "T6_Y2025",
+    "T7_Y2024",
+    "T7_Y2025",
+    "T8_Y2024",
+    "T8_Y2025"
+  ],
+  "runs_count": 16,
+  "completed_kst": "2026-11-09 16:25:12 KST",
+  "judgment": {
+    "rule": "both years rebate>0 AND both raw MDD<=25%: max 2-year sum",
+    "result": "ADOPTION_CANDIDATE",
+    "condition": "T1",
+    "candidates": [
+      "T1"
+    ],
+    "adoption_is_user_decision": true
+  },
+  "v1_unchanged": "0.9.166 (B6) live paper untouched",
+  "fees": "maker 0.018% / taker 0.042% / rebate 70%",
+  "actual_file_count_before_DONE": 200,
+  "file_count_including_DONE": 201,
+  "manifest_sha256": "277cfa9582eb5f129c882401741532319c21893b8de2b1fdaba63f8ed7a18dff",
+  "publication_protocol": "Commit ONLY after all other remote files hash verified; DONE separate LAST commit then verify all files"
+}
