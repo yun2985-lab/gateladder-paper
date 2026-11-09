@@ -1,10 +1,22 @@
 {
   "schema": 1,
-  "profile": "V1_W4_GATE",
-  "strategy_origin": "0.9.169 (V4)+0.9.172 W4 (same-direction normal entries max 1 concurrent; rescue adds excluded)",
+  "profile": "V1_X5_GATE",
+  "strategy_origin": "0.9.170 (W4)+0.9.173 X5 (rescue add size 4%->5% + rescue TP +60->+80)",
   "label_only_alias": false,
-  "adopted_from": "0.9.169 (V4)",
-  "user_authorization": "pt219u",
+  "adopted_from": "0.9.170 (W4)",
+  "user_authorization": "pt222u",
+  "x5_rule": {
+    "rescue_size_pct": 5,
+    "rescue_tp": 80,
+    "max_normal_side": 1,
+    "rescue_excluded": true,
+    "normal_in_rescue_counts": true,
+    "hooks": "rescue_settings158.size_available_pct=5 + rescue_tp159=80 (Engine172/173)",
+    "backtest_ref": "engine173.Engine173(rescue_tp173=80) + Engine172(max_normal_side172=1,rescue_size_pct172=5) setup_0173 X5",
+    "note": "X5 = W4 + rescue add 4%->5% + rescue TP +60->+80; slope 6 and max_normal_side 1 unchanged"
+  },
+  "x5_since_ms": 1794260880000,
+  "x5_since_kst": "2026-11-10 06:48:00 KST",
   "w4_rule": {
     "max_normal_side": 1,
     "rescue_excluded": true,
@@ -53,7 +65,7 @@
   "t1_since_ms": 1794210300000,
   "t1_since_kst": "2026-11-09 16:45:00 KST",
   "trend_pause169": {
-    "rule": "0.9.170 W4: V4 (Pause-B slope6 rescue-add pause + OFF4 + rescue add 4%) + same-direction normal entries max 1 concurrent (rescue adds excluded)",
+    "rule": "0.9.171 X5: W4 (same-direction normal max 1 + Pause-B slope6 + OFF4 + rescue add was 4%) + rescue add size 5% + rescue TP +80",
     "params": {
       "pause_tf": "4h",
       "stale_days": null,
@@ -67,18 +79,18 @@
     "paused_L": true,
     "paused_S": false,
     "sma": {
-      "t_end": 1794260700000,
+      "t_end": 1794260940000,
       "sma": 78917.57,
       "sma_6bars_ago": 79283.795,
       "sma_close_t": 1794254400000,
-      "close": 74811.9
+      "close": 74893.8
     },
     "pause_hours": {
-      "L": 14.0,
+      "L": 14.0667,
       "S": 0.0
     },
     "pause_hours_while_rescue_active": {
-      "L": 14.0,
+      "L": 14.0667,
       "S": 0.0
     },
     "pause_slot_cancels": {
@@ -111,7 +123,7 @@
       }
     },
     "u4_since_ms": 1794217500000,
-    "rescue_size_pct": 4,
+    "rescue_size_pct": 5,
     "v4_since_ms": 1794226020000,
     "max_normal_side": 1,
     "normal_open": {
@@ -124,14 +136,17 @@
         "S": 1
       },
       "market": {
-        "L": 87,
-        "S": 89
+        "L": 91,
+        "S": 93
       },
-      "total": 177
+      "total": 185
     },
-    "w4_since_ms": 1794255480000
+    "w4_since_ms": 1794255480000,
+    "rescue_tp": 80,
+    "x5_since_ms": 1794260880000
   },
   "component_sha256": {
+    "engine_v1_w4_gate.py": "615f89fe966a9bf6d6ef5efc8d6c21594c77c402382403b00d2888cc57d7dbcd",
     "engine_v1_v4_gate.py": "dd81d5eeccb5ecdefbccf8ad547c07502a7ad6fee4f8165db331c7d684f84d46",
     "engine_v1_u4_gate.py": "e53a41a3d2e501cda51efcde46493bb1dfcfdb881122797470136cf4929fa202",
     "engine_v1_t1_gate.py": "0106460c9df1a99acfa4b67983f489bd853e758154e2755a0fa6485d5aad193e",
@@ -142,11 +157,11 @@
     "engine158.py": "702fe8966597e2fd947315048e932a7ac0bd020854c9fb410ffa48c7c9b755d1"
   },
   "same_account_continuity": true,
-  "label": "0.9.170 (W4)",
+  "label": "0.9.171 (X5)",
   "mode": "LIVE",
-  "bar_end_ms": 1794260700000,
-  "bar_end_kst": "2026-11-10 06:45:00 KST",
-  "prepared_kst": "2026-11-10 06:46:31 KST",
+  "bar_end_ms": 1794260940000,
+  "bar_end_kst": "2026-11-10 06:49:00 KST",
+  "prepared_kst": "2026-11-10 06:49:59 KST",
   "seed": 1000,
   "original_start_ms": 1793576760000,
   "original_start_kst": "2026-11-02 08:46:00 KST",
@@ -156,7 +171,7 @@
     "rebate": 0.7
   },
   "repayment_estimate": 0.0005,
-  "source_sha256": "615f89fe966a9bf6d6ef5efc8d6c21594c77c402382403b00d2888cc57d7dbcd",
+  "source_sha256": "925bb47a57cb1aaed258ad04ca309d53b501134a0a26d3994b5b8d76c4428cc6",
   "pattern_switches166": {
     "tp_set": {
       "ma:1h": 200,
@@ -173,11 +188,11 @@
   },
   "base_engine166_sha256": "a7c9a0b4aa585a59ed38843184fed8eea831537569efd26e67797e2c156dd77e",
   "pinned_files": {
-    "config.json": "ad81ff3042f152297882437fff4f114425ec46f8e009d92066b8aa72f2e8a6bd",
-    "run_live.py": "5c19161b1d5a01c9804525745a187b70b60e74f6293350ba37a37cf755744335",
-    "summary.py": "bfd4e881afc7f35c137ab5c2d2f0719f1c66c8253cef466e0d7683ba86ccbe83"
+    "config.json": "f4c330bc899d1085ba980a87783dc091778aad5fc9ace56288183188a301f1ac",
+    "run_live.py": "e19ec1f5e02d7b6955e6b8ba1324d57c1b39c963e97bce41c624b0d620a70884",
+    "summary.py": "acba6db98344198a0ba75ba88ffd062e01ae0456171d9af1c74ac4e169dcee3f"
   },
-  "snapshot_state_sha256": "ba02087ae11763d5b63ec2c2ef8dd3eb912db64c258125bd20c89038183d55b8",
+  "snapshot_state_sha256": "d777e90523e8562e4bb3faaa2c1700b58ab4acd5cc6314b34b20510358a7888b",
   "chart_template_sha256": "a5810d5b2ffff116ca4d82eadbc6ce08d82a57d573a68c5f3111c98d37827208",
   "chart_source": "public Binance settled15m",
   "coherence": "captured summary/accounting last row matches settled state; PNG rendered from captured JSON/state",
@@ -188,12 +203,13 @@
     "data.json",
     "dash.png"
   ],
-  "optional_audit_path": "V1_W4_DEPLOYMENT.json",
+  "optional_audit_path": "V1_X5_DEPLOYMENT.json",
   "remote_must_delete": [
-    "V1_V4_DEPLOYMENT.json"
+    "V1_W4_DEPLOYMENT.json"
   ],
   "remote_must_be_absent": [
     "SHA256.json",
+    "V1_W4_DEPLOYMENT.json",
     "V1_V4_DEPLOYMENT.json",
     "V1_U4_DEPLOYMENT.json",
     "V1_T1_DEPLOYMENT.json",
