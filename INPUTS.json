@@ -1,0 +1,82 @@
+{
+  "engine": {
+    "engine170.py": "0d4f02811eb26b0186760c473a9e9d473c0df2a62fa32e8bc7db3df4e2d5c7ba",
+    "engine169.py": "94661ee3a8f8712ac062c5aa7426982dbaf66ceb9dafe2dee2c9b1384abc4f59",
+    "engine167.py": "1a40c4845e4fb67e4f5e3cc268500c841050062734b18bd0a0798bc01d320dd9"
+  },
+  "scripts": {
+    "setup_0170.py": "c5b3943dd24a95264a2776c7a4075835278ff88a765202df9ea19d925b3b5f74",
+    "supervise_0170.py": "502f74576d30b4acb7065fdc45f6bffbf9476bad161c7e93d5dac7380f86fc5a",
+    "report_v2_0170_y2024.py": "52be1dd5686d6b7422da540125834432f2bc5a73062ef3bf6566ebd5640df031",
+    "report_v2_0170_y2025.py": "0be20f1bad21f2cefafde9e9dc604bb8cebf33c6c7862ee46b50823722b9b18c",
+    "verify_held170.py": "429d7013fad3c269767b7ded80efa3a2b399611f4705337ae19f5c90cb30357a",
+    "finalize_0170.py": "b74cc5b07f45f2e62c39fb346cc5b30857fe7e515a22c54124bbac94f641d50f",
+    "export_entries_0170.py": "316c7da67d27c344041dfd528c02940b9cbb1184c2129cedb8f9195d720f1cf6",
+    "package_0170.py": "67f70106935e99322a48cf6e9e23c1644160923cd7435a6160fe45840cde85fb",
+    "test_engine170.py": "6f3ebb2ac2f66b6a832fc74c69b7808dc33fad012b89a0243addc27ae567d429",
+    "progress_0170.py": "15dae38375bf1cb2bbde391b6a0b685d41b94514d2ac7c1a9ddac30870482896",
+    "cohort_0170_y2024.py": "e46128eae7c3fccb64d73e402f0f8979f17600c2ca64c7cc39deae8066c4948c",
+    "cohort_0170_y2025.py": "65f6c1ced213c61fbba51e275ac118baa2c35f91a8fe1a92e3332f98d95d1e7a",
+    "cohort_tf_0170_y2024.py": "fa4644a66f190dc4fdb0e334716e9a4d8c7cd402ad4edb65dd8c802c14a3979d",
+    "cohort_tf_0170_y2025.py": "7b516abac62c3164d5975b8a938a3009dccadccc7de507ebbb4324d6fb666cbe",
+    "kcache0168.py": "9375abb730ea063428785ee5afc62b3157b90e9ccc486be2f34c4526d736c15e",
+    "kcache0167.py": "196d00997e11708f6bed3239d1d1269e21a206828f1f0ad6eccd09d1d2aa3bb3",
+    "build_sma_0169.py": "343b652d7bbf9ba4320073ece0063c9eb0150bfa05d57c19fbc462094a9e1392"
+  },
+  "minutes": {
+    "Y2024": {
+      "path": "inputs_0168/historical_minutes_2024_prior_year.pkl",
+      "sha256": "b7efcbaa797996eb71ee8e68fcfc236c8e9aadd61c19ddfbddf25169cae4c22c"
+    },
+    "Y2025": {
+      "path": "inputs_0164/historical_minutes_through_fixed_cutoff.pkl",
+      "sha256": "bd28e1ac68ed6cb9db962a295bf6da95052636536873e456be247fecbaedddc6"
+    }
+  },
+  "sma_tables": {
+    "Y2024": {
+      "file": "/workspace/gateladder_bt/inputs_0169/sma_Y2024.pkl",
+      "sha256": "a9e370392ba18ff60909a340716731ab7c8c9e55ecdec2caea931bc0312d3579",
+      "engine_minutes": "/workspace/gateladder_bt/inputs_0168/historical_minutes_2024_prior_year.pkl",
+      "npz_prefix_minutes": 116460,
+      "first_minute": 1722438000000,
+      "4h": {
+        "bars": 2760,
+        "first_valid_close_t": 1724155200000
+      },
+      "1d": {
+        "bars": 460,
+        "first_valid_close_t": 1726704000000
+      }
+    },
+    "Y2025": {
+      "file": "/workspace/gateladder_bt/inputs_0169/sma_Y2025.pkl",
+      "sha256": "aab11e4a42a68f5fbb406ee3dd98a2528de6e6d36535c453ad96875e49de55e1",
+      "engine_minutes": "/workspace/gateladder_bt/inputs_0164/historical_minutes_through_fixed_cutoff.pkl",
+      "npz_prefix_minutes": 613980,
+      "first_minute": 1722438000000,
+      "4h": {
+        "bars": 4974,
+        "first_valid_close_t": 1724155200000
+      },
+      "1d": {
+        "bars": 829,
+        "first_valid_close_t": 1726704000000
+      }
+    }
+  },
+  "periods": {
+    "Y2024": "2024-11-04 00:00 ~ 2025-11-03 23:59 KST",
+    "Y2025": "2025-11-04 00:00 ~ 2026-11-07 KST"
+  },
+  "baselines": {
+    "T1_Y2024": {
+      "path": "live_0169/T1_Y2024/replay_complete/report.json",
+      "sha256": "7f5da203a8281185d0813a79dca7b9ce15cba0ad5d651ea457020113aeb39893"
+    },
+    "T1_Y2025": {
+      "path": "live_0169/T1_Y2025/replay_complete/report.json",
+      "sha256": "2962154405f02e245e2f968beaad08ef808857e225e4b896759e756ad303207c"
+    }
+  }
+}

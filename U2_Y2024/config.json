@@ -1,0 +1,83 @@
+{
+  "module": "engine170",
+  "cls": "Engine170",
+  "version": "0.9.170",
+  "edits": "/workspace/gateladder_bt/line_edits_20261103b.json",
+  "start": 1730646000000,
+  "source_sha256": "1a40c4845e4fb67e4f5e3cc268500c841050062734b18bd0a0798bc01d320dd9",
+  "replay_end_ms": 1762182000000,
+  "comparison_baselines": {
+    "T1_Y2024": "frozen live_0169/T1_Y2024 (rebate +0.473%, raw MDD 16.901%)",
+    "T1_Y2025": "frozen live_0169/T1_Y2025 (rebate +0.386%, raw MDD 18.710%)"
+  },
+  "variant": "U2_Y2024",
+  "flags": {
+    "TREND": true,
+    "RSI": true,
+    "STRETCH": false,
+    "UNTIL_ZERO": false,
+    "SIDE_BLOCK": true
+  },
+  "settings155": {
+    "rsi_upper": 70,
+    "rsi_lower": 30,
+    "pos30": false
+  },
+  "source_zip_sha256": null,
+  "need_held": false,
+  "rescue_params158": {
+    "rescue_max_open": 20,
+    "rescue_gap": 0.003,
+    "rescue_margin_pct": 40,
+    "rescue_size_pct": 3,
+    "open_limit": true
+  },
+  "params159": {
+    "held_block": false,
+    "start_roi": -2,
+    "rescue_tp": 60
+  },
+  "source_kind": "pt216u 0.9.170 two-year survival round 2",
+  "automatic_improvement_round": "two-year-survival 2",
+  "params162": {
+    "normal_cap_pct": 20
+  },
+  "params162m": {
+    "m1_market": true,
+    "m1_break_tp": 90
+  },
+  "params167": {
+    "tp_set": {
+      "ma:1h": 200,
+      "mat:1h": 200
+    },
+    "off": [
+      "mat:15m",
+      "ma20:15m",
+      "ma60:15m",
+      "ma20:1h"
+    ],
+    "market_frames": [],
+    "ma_market_frames": []
+  },
+  "label": "0.9.170 U2 on Y2024 (exact 0.9.169 T1 + U1 + \uc77c\ubc18 \uc190\uc808 3%)",
+  "fee_basis": "maker 0.018% / taker 0.042% / rebate 70% (engine8 constants, same as .167 G1 and .168 B6)",
+  "period_kst": "2024-11-04 00:00 ~ 2025-11-03 23:59 KST",
+  "input_minutes": "/workspace/gateladder_bt/inputs_0168/historical_minutes_2024_prior_year.pkl",
+  "filters_seed": "/workspace/gateladder_bt/inputs_0168/filters_0168_seed.pkl",
+  "strategy_seed": "/workspace/gateladder_bt/inputs_0168/strategy_0168_seed.pkl",
+  "condition": "U2",
+  "year_tag": "Y2024",
+  "engine169_sha256": "94661ee3a8f8712ac062c5aa7426982dbaf66ceb9dafe2dee2c9b1384abc4f59",
+  "params169": {
+    "pause_tf": "4h",
+    "sma_table": "/workspace/gateladder_bt/inputs_0169/sma_Y2024.pkl"
+  },
+  "description": "U1 + \uc77c\ubc18 \uc190\uc808 3%",
+  "params170": {
+    "div1m_off": true,
+    "sl_pct": 3,
+    "pause_mode": "T1"
+  },
+  "engine170_sha256": "0d4f02811eb26b0186760c473a9e9d473c0df2a62fa32e8bc7db3df4e2d5c7ba"
+}
