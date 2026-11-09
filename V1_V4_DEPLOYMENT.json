@@ -1,10 +1,18 @@
 {
   "schema": 1,
-  "profile": "V1_U4_GATE",
-  "strategy_origin": "0.9.167 (T1)+0.9.170 U4 (Pause-B 4h SMA120 slope6 + OFF4)",
+  "profile": "V1_V4_GATE",
+  "strategy_origin": "0.9.168 (U4)+0.9.171 V4 (rescue add size 3%->4%)",
   "label_only_alias": false,
-  "adopted_from": "0.9.167 (T1)",
-  "user_authorization": "pt217u",
+  "adopted_from": "0.9.168 (U4)",
+  "user_authorization": "pt218u",
+  "v4_rule": {
+    "rescue_size_pct": 4,
+    "rescue_margin_pct": 40,
+    "note": "rescue_params158.rescue_size_pct stays 3 for constructor validation; engine sets size_available_pct=4 (identical to Engine171 rescue_size_pct171=4)"
+  },
+  "rescue_settings158": null,
+  "v4_since_ms": 1794226020000,
+  "v4_since_kst": "2026-11-09 21:07:00 KST",
   "u4_rule": {
     "div1m_off": true,
     "sl_pct": null,
@@ -35,7 +43,7 @@
   "t1_since_ms": 1794210300000,
   "t1_since_kst": "2026-11-09 16:45:00 KST",
   "trend_pause169": {
-    "rule": "0.9.168 U4: Pause-B (adverse side of closed 4h SMA120 AND SMA120 vs 6 closed 4h bars ago same direction) on rescue adds only; OFF4",
+    "rule": "0.9.169 V4: U4 (Pause-B slope6 rescue-add pause + OFF4) + rescue add size 4% of available",
     "params": {
       "pause_tf": "4h",
       "stale_days": null,
@@ -49,18 +57,18 @@
     "paused_L": true,
     "paused_S": false,
     "sma": {
-      "t_end": 1794225540000,
-      "sma": 79100.21416666666,
-      "sma_6bars_ago": 79435.44666666667,
-      "sma_close_t": 1794211200000,
-      "close": 74390.1
+      "t_end": 1794226080000,
+      "sma": 79040.86166666666,
+      "sma_6bars_ago": 79382.31833333333,
+      "sma_close_t": 1794225600000,
+      "close": 74491.0
     },
     "pause_hours": {
-      "L": 4.2333,
+      "L": 4.3833,
       "S": 0.0
     },
     "pause_hours_while_rescue_active": {
-      "L": 4.2333,
+      "L": 4.3833,
       "S": 0.0
     },
     "pause_slot_cancels": {
@@ -68,7 +76,7 @@
       "S": 0
     },
     "pause_suppressed_placements": {
-      "L": 0,
+      "L": 1,
       "S": 0
     },
     "regime_changes": 0,
@@ -92,21 +100,25 @@
         "S": 0
       }
     },
-    "u4_since_ms": 1794217500000
+    "u4_since_ms": 1794217500000,
+    "rescue_size_pct": 4,
+    "v4_since_ms": 1794226020000
   },
   "component_sha256": {
+    "engine_v1_u4_gate.py": "e53a41a3d2e501cda51efcde46493bb1dfcfdb881122797470136cf4929fa202",
     "engine_v1_t1_gate.py": "0106460c9df1a99acfa4b67983f489bd853e758154e2755a0fa6485d5aad193e",
     "engine169.py": "94661ee3a8f8712ac062c5aa7426982dbaf66ceb9dafe2dee2c9b1384abc4f59",
     "engine167.py": "1a40c4845e4fb67e4f5e3cc268500c841050062734b18bd0a0798bc01d320dd9",
     "engine_v1_f3_gate.py": "f686dc6c99fcfd42706aec5e700477398b0d1b299d1fdf29961ef680c97faafa",
-    "engine166.py": "a7c9a0b4aa585a59ed38843184fed8eea831537569efd26e67797e2c156dd77e"
+    "engine166.py": "a7c9a0b4aa585a59ed38843184fed8eea831537569efd26e67797e2c156dd77e",
+    "engine158.py": "702fe8966597e2fd947315048e932a7ac0bd020854c9fb410ffa48c7c9b755d1"
   },
   "same_account_continuity": true,
-  "label": "0.9.168 (U4)",
+  "label": "0.9.169 (V4)",
   "mode": "LIVE",
-  "bar_end_ms": 1794225540000,
-  "bar_end_kst": "2026-11-09 20:59:00 KST",
-  "prepared_kst": "2026-11-09 20:59:27 KST",
+  "bar_end_ms": 1794226080000,
+  "bar_end_kst": "2026-11-09 21:08:00 KST",
+  "prepared_kst": "2026-11-09 21:08:46 KST",
   "seed": 1000,
   "original_start_ms": 1793576760000,
   "original_start_kst": "2026-11-02 08:46:00 KST",
@@ -116,7 +128,7 @@
     "rebate": 0.7
   },
   "repayment_estimate": 0.0005,
-  "source_sha256": "e53a41a3d2e501cda51efcde46493bb1dfcfdb881122797470136cf4929fa202",
+  "source_sha256": "dd81d5eeccb5ecdefbccf8ad547c07502a7ad6fee4f8165db331c7d684f84d46",
   "pattern_switches166": {
     "tp_set": {
       "ma:1h": 200,
@@ -133,11 +145,11 @@
   },
   "base_engine166_sha256": "a7c9a0b4aa585a59ed38843184fed8eea831537569efd26e67797e2c156dd77e",
   "pinned_files": {
-    "config.json": "bf031b475ae2682a66ce518907200c79c6dfbbe97e70c90828cc0db42572f014",
-    "run_live.py": "c5900f8549e8766398327bf953606ea531333dcbf8da66f52291f9f4eba53e99",
-    "summary.py": "37a8f8b08a012ba21b9eb62d6aba0c8da404c77612f7fd24fa0e13a5c28d3cee"
+    "config.json": "1e794d0d4a7a083b62b46acc7efa47084e034e5bc22c5f53d6752e73969b1a2e",
+    "run_live.py": "a4e15c55f5c9341b0f4d6f5f670be8c6ef9c952c9a7c58c271c400a1b54076ae",
+    "summary.py": "5906e5000500324610b7d9d3ff3581b6bc3601515a3192d08d4425c6939fb0a2"
   },
-  "snapshot_state_sha256": "456d453ce0471ba83f7100a7cc5222f353a61c17d15ba0485581971482afdadc",
+  "snapshot_state_sha256": "5a3da36312dac6c6836d6d247f1f91fefc8a4c5dccdb07b43cef6c6a57c1bdec",
   "chart_template_sha256": "a5810d5b2ffff116ca4d82eadbc6ce08d82a57d573a68c5f3111c98d37827208",
   "chart_source": "public Binance settled15m",
   "coherence": "captured summary/accounting last row matches settled state; PNG rendered from captured JSON/state",
@@ -148,12 +160,13 @@
     "data.json",
     "dash.png"
   ],
-  "optional_audit_path": "V1_U4_DEPLOYMENT.json",
+  "optional_audit_path": "V1_V4_DEPLOYMENT.json",
   "remote_must_delete": [
-    "V1_T1_DEPLOYMENT.json"
+    "V1_U4_DEPLOYMENT.json"
   ],
   "remote_must_be_absent": [
     "SHA256.json",
+    "V1_U4_DEPLOYMENT.json",
     "V1_T1_DEPLOYMENT.json",
     "V1_B6_DEPLOYMENT.json",
     "V1_B5_DEPLOYMENT.json",
