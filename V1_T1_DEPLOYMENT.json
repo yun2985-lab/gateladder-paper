@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "profile": "V1_T1_GATE",
+  "strategy_origin": "0.9.166 (B6)+0.9.169 T1 rescue-add 4h SMA120 trend pause",
+  "label_only_alias": false,
+  "adopted_from": "0.9.166 (B6)",
+  "user_authorization": "pt216u",
+  "G1_tp_set": {
+    "ma:1h": 200,
+    "mat:1h": 200
+  },
+  "t1_rule": {
+    "pause_tf": "4h",
+    "sma": "4h close SMA120 closed-bar, UTC buckets, live from engine pb[240]",
+    "stale_days": null,
+    "opp_bank": false,
+    "loss_cap_pct": null,
+    "net_tf": null
+  },
+  "t1_since_ms": 1794210300000,
+  "t1_since_kst": "2026-11-09 16:45:00 KST",
+  "trend_pause169": {
+    "rule": "0.9.169 T1: 4h SMA120 closed-bar trend pause on rescue adds only",
+    "params": {
+      "pause_tf": "4h",
+      "stale_days": null,
+      "opp_bank": false,
+      "opp_age_days": 7,
+      "loss_cap_pct": null,
+      "net_tf": null,
+      "net_size_pct": 3
+    },
+    "regime": "DOWN",
+    "paused_L": true,
+    "paused_S": false,
+    "sma": {
+      "t_end": 1794210420000,
+      "sma": 79164.17916666667,
+      "sma_close_t": 1794196800000,
+      "close": 73829.3
+    },
+    "pause_hours": {
+      "L": 0.0333,
+      "S": 0.0
+    },
+    "pause_hours_while_rescue_active": {
+      "L": 0.0333,
+      "S": 0.0
+    },
+    "pause_slot_cancels": {
+      "L": 0,
+      "S": 0
+    },
+    "pause_suppressed_placements": {
+      "L": 0,
+      "S": 0
+    },
+    "regime_changes": 0,
+    "since_ms": 1794210300000
+  },
+  "component_sha256": {
+    "engine169.py": "94661ee3a8f8712ac062c5aa7426982dbaf66ceb9dafe2dee2c9b1384abc4f59",
+    "engine167.py": "1a40c4845e4fb67e4f5e3cc268500c841050062734b18bd0a0798bc01d320dd9",
+    "engine_v1_f3_gate.py": "f686dc6c99fcfd42706aec5e700477398b0d1b299d1fdf29961ef680c97faafa",
+    "engine166.py": "a7c9a0b4aa585a59ed38843184fed8eea831537569efd26e67797e2c156dd77e"
+  },
+  "same_account_continuity": true,
+  "label": "0.9.167 (T1)",
+  "mode": "LIVE",
+  "bar_end_ms": 1794210420000,
+  "bar_end_kst": "2026-11-09 16:47:00 KST",
+  "prepared_kst": "2026-11-09 16:47:38 KST",
+  "seed": 1000,
+  "original_start_ms": 1793576760000,
+  "original_start_kst": "2026-11-02 08:46:00 KST",
+  "fees_actual": {
+    "maker": 0.0002,
+    "taker": 0.00045,
+    "rebate": 0.7
+  },
+  "repayment_estimate": 0.0005,
+  "source_sha256": "0106460c9df1a99acfa4b67983f489bd853e758154e2755a0fa6485d5aad193e",
+  "pattern_switches166": {
+    "tp_set": {
+      "ma:1h": 200,
+      "mat:1h": 200
+    },
+    "off": [
+      "mat:15m"
+    ],
+    "market_frames": [],
+    "ma_market_frames": []
+  },
+  "base_engine166_sha256": "a7c9a0b4aa585a59ed38843184fed8eea831537569efd26e67797e2c156dd77e",
+  "pinned_files": {
+    "config.json": "32ec95b20fae6a7e4d44c3f9c587f06db06ed26a3a9dc839ddb7579215dc9ef3",
+    "run_live.py": "2b39b297d952359324bd8a5f7a9446d5d9268b8448e2236a3f8db5e1433aa826",
+    "summary.py": "429bfee5bf08d702d6d53f350fe6f61abff0f693295aa1943415beb93fe4f084"
+  },
+  "snapshot_state_sha256": "a9698a1ee377a6b95406c2c4f61d46d137f83172015b534e2462dc4e9b0a6dbc",
+  "chart_template_sha256": "a5810d5b2ffff116ca4d82eadbc6ce08d82a57d573a68c5f3111c98d37827208",
+  "chart_source": "public Binance settled15m",
+  "coherence": "captured summary/accounting last row matches settled state; PNG rendered from captured JSON/state",
+  "max_export_age_seconds": 720,
+  "target_repository": "yun2985-lab/gateladder-paper",
+  "target_branch": "data_latest",
+  "publish_paths": [
+    "data.json",
+    "dash.png"
+  ],
+  "optional_audit_path": "V1_T1_DEPLOYMENT.json",
+  "remote_must_delete": [
+    "V1_B6_DEPLOYMENT.json"
+  ],
+  "remote_must_be_absent": [
+    "SHA256.json",
+    "V1_B6_DEPLOYMENT.json",
+    "V1_B5_DEPLOYMENT.json",
+    "V1_F3_DEPLOYMENT.json",
+    "V1_B4_DEPLOYMENT.json"
+  ],
+  "publication_performed": false
+}
