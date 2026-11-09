@@ -1,0 +1,84 @@
+{
+  "engine": {
+    "engine172.py": "d445fcdb1f386ec968e4bbb955a24d446321c857c223d2f536feb05e9767d913",
+    "engine171.py": "c050d743b482d5487513f69c7611541812b4999be76949ba8aa9ae4eb8671a0a",
+    "engine170.py": "0d4f02811eb26b0186760c473a9e9d473c0df2a62fa32e8bc7db3df4e2d5c7ba",
+    "engine169.py": "94661ee3a8f8712ac062c5aa7426982dbaf66ceb9dafe2dee2c9b1384abc4f59",
+    "engine167.py": "1a40c4845e4fb67e4f5e3cc268500c841050062734b18bd0a0798bc01d320dd9"
+  },
+  "scripts": {
+    "setup_0172.py": "c6b05ca20343bc2f92eade8aab51c4ddf298ba9b2fd84c095d428e54b023167a",
+    "supervise_0172.py": "502f74576d30b4acb7065fdc45f6bffbf9476bad161c7e93d5dac7380f86fc5a",
+    "report_v2_0172_y2024.py": "1d68b5267ef722ba25c9dbdfd07b4ee305c891c6cbb8e254729346faa46e0a4b",
+    "report_v2_0172_y2025.py": "6b58fe61eb10fd7cb04ec96a21f203c07d80dd52f35e73d7777124289b4b0b0b",
+    "verify_held170.py": "429d7013fad3c269767b7ded80efa3a2b399611f4705337ae19f5c90cb30357a",
+    "finalize_0172.py": "c2c2c0afde3011cd594c4cd2ad8f89dd4df3dd7ee8e2d0b63e25c39db738931a",
+    "export_entries_0172.py": "11878c52763996c249b0222c6cd4e40046d6808d2bd990e166866b8549d5f4ec",
+    "package_0172.py": "d2ead849a9293c2fcb75005ce6c9f6b0072dea23c8a1e36f35499728e81c5a82",
+    "test_engine172.py": "cb9a3c317b08d5ea4d887fca95177f7d1f943c1ac2cbf85cd9065b6d22ee41d9",
+    "progress_0172.py": "8f24fb879f927992fc2b4ebe82e2cc5e9b5869e3b44970240b9102cc97df8885",
+    "cohort_0170_y2024.py": "e46128eae7c3fccb64d73e402f0f8979f17600c2ca64c7cc39deae8066c4948c",
+    "cohort_0170_y2025.py": "65f6c1ced213c61fbba51e275ac118baa2c35f91a8fe1a92e3332f98d95d1e7a",
+    "cohort_tf_0170_y2024.py": "fa4644a66f190dc4fdb0e334716e9a4d8c7cd402ad4edb65dd8c802c14a3979d",
+    "cohort_tf_0170_y2025.py": "7b516abac62c3164d5975b8a938a3009dccadccc7de507ebbb4324d6fb666cbe",
+    "kcache0168.py": "9375abb730ea063428785ee5afc62b3157b90e9ccc486be2f34c4526d736c15e",
+    "kcache0167.py": "196d00997e11708f6bed3239d1d1269e21a206828f1f0ad6eccd09d1d2aa3bb3",
+    "build_sma_0169.py": "343b652d7bbf9ba4320073ece0063c9eb0150bfa05d57c19fbc462094a9e1392"
+  },
+  "minutes": {
+    "Y2024": {
+      "path": "inputs_0168/historical_minutes_2024_prior_year.pkl",
+      "sha256": "b7efcbaa797996eb71ee8e68fcfc236c8e9aadd61c19ddfbddf25169cae4c22c"
+    },
+    "Y2025": {
+      "path": "inputs_0164/historical_minutes_through_fixed_cutoff.pkl",
+      "sha256": "bd28e1ac68ed6cb9db962a295bf6da95052636536873e456be247fecbaedddc6"
+    }
+  },
+  "sma_tables": {
+    "Y2024": {
+      "file": "/workspace/gateladder_bt/inputs_0169/sma_Y2024.pkl",
+      "sha256": "a9e370392ba18ff60909a340716731ab7c8c9e55ecdec2caea931bc0312d3579",
+      "engine_minutes": "/workspace/gateladder_bt/inputs_0168/historical_minutes_2024_prior_year.pkl",
+      "npz_prefix_minutes": 116460,
+      "first_minute": 1722438000000,
+      "4h": {
+        "bars": 2760,
+        "first_valid_close_t": 1724155200000
+      },
+      "1d": {
+        "bars": 460,
+        "first_valid_close_t": 1726704000000
+      }
+    },
+    "Y2025": {
+      "file": "/workspace/gateladder_bt/inputs_0169/sma_Y2025.pkl",
+      "sha256": "aab11e4a42a68f5fbb406ee3dd98a2528de6e6d36535c453ad96875e49de55e1",
+      "engine_minutes": "/workspace/gateladder_bt/inputs_0164/historical_minutes_through_fixed_cutoff.pkl",
+      "npz_prefix_minutes": 613980,
+      "first_minute": 1722438000000,
+      "4h": {
+        "bars": 4974,
+        "first_valid_close_t": 1724155200000
+      },
+      "1d": {
+        "bars": 829,
+        "first_valid_close_t": 1726704000000
+      }
+    }
+  },
+  "periods": {
+    "Y2024": "2024-11-04 00:00 ~ 2025-11-03 23:59 KST",
+    "Y2025": "2025-11-04 00:00 ~ 2026-11-07 KST"
+  },
+  "baselines": {
+    "V4_Y2024": {
+      "path": "live_0171/V4_Y2024/replay_complete/report.json",
+      "sha256": "45d10ee46adddf85f9a90318314f792ab28f5eb444f10587f4a44e7eb6f6e36b"
+    },
+    "V4_Y2025": {
+      "path": "live_0171/V4_Y2025/replay_complete/report.json",
+      "sha256": "c60dc2fa828e3b0a3bcea6a80f67fe4fb9e59265f6ad75847cc1ff0ee72b14c3"
+    }
+  }
+}

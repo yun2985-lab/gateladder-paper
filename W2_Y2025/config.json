@@ -1,0 +1,92 @@
+{
+  "module": "engine172",
+  "cls": "Engine172",
+  "version": "0.9.172",
+  "edits": "/workspace/gateladder_bt/line_edits_20261103b.json",
+  "start": 1762182000000,
+  "source_sha256": "1a40c4845e4fb67e4f5e3cc268500c841050062734b18bd0a0798bc01d320dd9",
+  "replay_end_ms": 1794063240000,
+  "comparison_baselines": {
+    "V4_Y2024": "frozen live_0171/V4_Y2024 (rebate +6.981%, raw MDD 19.074%)",
+    "V4_Y2025": "frozen live_0171/V4_Y2025 (rebate +5.609%, raw MDD 15.794%)"
+  },
+  "variant": "W2_Y2025",
+  "flags": {
+    "TREND": true,
+    "RSI": true,
+    "STRETCH": false,
+    "UNTIL_ZERO": false,
+    "SIDE_BLOCK": true
+  },
+  "settings155": {
+    "rsi_upper": 70,
+    "rsi_lower": 30,
+    "pos30": false
+  },
+  "source_zip_sha256": null,
+  "need_held": false,
+  "rescue_params158": {
+    "rescue_max_open": 20,
+    "rescue_gap": 0.003,
+    "rescue_margin_pct": 40,
+    "rescue_size_pct": 3,
+    "open_limit": true
+  },
+  "params159": {
+    "held_block": false,
+    "start_roi": -2,
+    "rescue_tp": 60
+  },
+  "source_kind": "pt218u 0.9.172 two-year round 4",
+  "automatic_improvement_round": "two-year-survival 4",
+  "params162": {
+    "normal_cap_pct": 20
+  },
+  "params162m": {
+    "m1_market": true,
+    "m1_break_tp": 90
+  },
+  "params167": {
+    "tp_set": {
+      "ma:1h": 200,
+      "mat:1h": 200
+    },
+    "off": [
+      "mat:15m",
+      "ma20:15m",
+      "ma60:15m",
+      "ma20:1h"
+    ],
+    "market_frames": [],
+    "ma_market_frames": []
+  },
+  "input_minutes": "/workspace/gateladder_bt/inputs_0164/historical_minutes_through_fixed_cutoff.pkl",
+  "filters_seed": "/workspace/gateladder_bt/filters_0154_seed.pkl",
+  "strategy_seed": "/workspace/gateladder_bt/strategy_0154_seed.pkl",
+  "period_kst": "2025-11-04 00:00 ~ 2026-11-07 KST (same as .167 G1)",
+  "condition": "W2",
+  "year_tag": "Y2025",
+  "engine169_sha256": "94661ee3a8f8712ac062c5aa7426982dbaf66ceb9dafe2dee2c9b1384abc4f59",
+  "params169": {
+    "pause_tf": "4h",
+    "sma_table": "/workspace/gateladder_bt/inputs_0169/sma_Y2025.pkl"
+  },
+  "label": "0.9.172 W2 on Y2025 (exact 0.9.171 V4 + V4 + V2 + \uc26c\uae30 \uae30\uc6b8\uae30 12\ubd09 (V3))",
+  "fee_basis": "maker 0.018% / taker 0.042% / rebate 70% (engine8 constants, same as .167 G1 and .168 B6)",
+  "description": "V4 + V2 + \uc26c\uae30 \uae30\uc6b8\uae30 12\ubd09 (V3)",
+  "params170": {
+    "div1m_off": true,
+    "sl_pct": null,
+    "pause_mode": "B"
+  },
+  "engine170_sha256": "0d4f02811eb26b0186760c473a9e9d473c0df2a62fa32e8bc7db3df4e2d5c7ba",
+  "params171": {
+    "rescue_size_pct171": 4,
+    "slope_bars": 12
+  },
+  "engine171_sha256": "c050d743b482d5487513f69c7611541812b4999be76949ba8aa9ae4eb8671a0a",
+  "params172": {
+    "max_normal_side172": 2
+  },
+  "engine172_sha256": "d445fcdb1f386ec968e4bbb955a24d446321c857c223d2f536feb05e9767d913"
+}
