@@ -1,0 +1,86 @@
+{
+  "engine": {
+    "engine173.py": "1936307e28b7d8418b603bb6153d74d4c8fe5df4eed01de24aa8b4fed561fe6f",
+    "engine172.py": "d445fcdb1f386ec968e4bbb955a24d446321c857c223d2f536feb05e9767d913",
+    "engine171.py": "c050d743b482d5487513f69c7611541812b4999be76949ba8aa9ae4eb8671a0a",
+    "engine170.py": "0d4f02811eb26b0186760c473a9e9d473c0df2a62fa32e8bc7db3df4e2d5c7ba",
+    "engine169.py": "94661ee3a8f8712ac062c5aa7426982dbaf66ceb9dafe2dee2c9b1384abc4f59",
+    "engine167.py": "1a40c4845e4fb67e4f5e3cc268500c841050062734b18bd0a0798bc01d320dd9"
+  },
+  "scripts": {
+    "setup_0173.py": "9e48f877d0fb85341c92ac2ca1561584669eac1c435a73a1a032174be4ff5b0e",
+    "supervise_0173.py": "502f74576d30b4acb7065fdc45f6bffbf9476bad161c7e93d5dac7380f86fc5a",
+    "report_v2_0173_y2024.py": "a8030e977cf485835840a1b4acaf6cf4b0296388676971f7680be8941b3e9cd5",
+    "report_v2_0173_y2025.py": "70279d2703f421365d53f4c4cc2856ca5010a905f69b4b0655ac149a257cfb57",
+    "verify_held170.py": "429d7013fad3c269767b7ded80efa3a2b399611f4705337ae19f5c90cb30357a",
+    "finalize_0173.py": "1e98d1b5dcc9b3ec41f60bc3ddd6e413c666d8877cfe557ebe0f45aee9b77597",
+    "export_entries_0173.py": "ab64e8b30475cda9aadb0269a271bd2ed4282dff10e8dcdd4cf831f03804a7ab",
+    "package_0173.py": "fc70b110d3f1ddc0a989eb09bc87c908447949e03a0bc768f7efea524d683d79",
+    "make_package_0173.py": "0942bb5821c5dbefb67981043e6fad0bb2ca4f251d52800f410ab47d32f63850",
+    "test_engine173.py": "a6983a8ddb81edc6cfd343963f07975442bb2aa9cb8104d5ffa3f74ac2031841",
+    "progress_0173.py": "e82a29e8f2c9dc4ff6cc73e3f0dbae9bd7d9829ec819f932490d162480a7d1af",
+    "cohort_0170_y2024.py": "e46128eae7c3fccb64d73e402f0f8979f17600c2ca64c7cc39deae8066c4948c",
+    "cohort_0170_y2025.py": "65f6c1ced213c61fbba51e275ac118baa2c35f91a8fe1a92e3332f98d95d1e7a",
+    "cohort_tf_0170_y2024.py": "fa4644a66f190dc4fdb0e334716e9a4d8c7cd402ad4edb65dd8c802c14a3979d",
+    "cohort_tf_0170_y2025.py": "7b516abac62c3164d5975b8a938a3009dccadccc7de507ebbb4324d6fb666cbe",
+    "kcache0168.py": "9375abb730ea063428785ee5afc62b3157b90e9ccc486be2f34c4526d736c15e",
+    "kcache0167.py": "196d00997e11708f6bed3239d1d1269e21a206828f1f0ad6eccd09d1d2aa3bb3",
+    "build_sma_0169.py": "343b652d7bbf9ba4320073ece0063c9eb0150bfa05d57c19fbc462094a9e1392"
+  },
+  "minutes": {
+    "Y2024": {
+      "path": "inputs_0168/historical_minutes_2024_prior_year.pkl",
+      "sha256": "b7efcbaa797996eb71ee8e68fcfc236c8e9aadd61c19ddfbddf25169cae4c22c"
+    },
+    "Y2025": {
+      "path": "inputs_0164/historical_minutes_through_fixed_cutoff.pkl",
+      "sha256": "bd28e1ac68ed6cb9db962a295bf6da95052636536873e456be247fecbaedddc6"
+    }
+  },
+  "sma_tables": {
+    "Y2024": {
+      "file": "/workspace/gateladder_bt/inputs_0169/sma_Y2024.pkl",
+      "sha256": "a9e370392ba18ff60909a340716731ab7c8c9e55ecdec2caea931bc0312d3579",
+      "engine_minutes": "/workspace/gateladder_bt/inputs_0168/historical_minutes_2024_prior_year.pkl",
+      "npz_prefix_minutes": 116460,
+      "first_minute": 1722438000000,
+      "4h": {
+        "bars": 2760,
+        "first_valid_close_t": 1724155200000
+      },
+      "1d": {
+        "bars": 460,
+        "first_valid_close_t": 1726704000000
+      }
+    },
+    "Y2025": {
+      "file": "/workspace/gateladder_bt/inputs_0169/sma_Y2025.pkl",
+      "sha256": "aab11e4a42a68f5fbb406ee3dd98a2528de6e6d36535c453ad96875e49de55e1",
+      "engine_minutes": "/workspace/gateladder_bt/inputs_0164/historical_minutes_through_fixed_cutoff.pkl",
+      "npz_prefix_minutes": 613980,
+      "first_minute": 1722438000000,
+      "4h": {
+        "bars": 4974,
+        "first_valid_close_t": 1724155200000
+      },
+      "1d": {
+        "bars": 829,
+        "first_valid_close_t": 1726704000000
+      }
+    }
+  },
+  "periods": {
+    "Y2024": "2024-11-04 00:00 ~ 2025-11-03 23:59 KST",
+    "Y2025": "2025-11-04 00:00 ~ 2026-11-07 KST"
+  },
+  "baselines": {
+    "W4_Y2024": {
+      "path": "live_0172/W4_Y2024/replay_complete/report.json",
+      "sha256": "316183d6c3f597cb6e474ae1cda4809fd01bb7e15513454c013a1950b1709975"
+    },
+    "W4_Y2025": {
+      "path": "live_0172/W4_Y2025/replay_complete/report.json",
+      "sha256": "5dccd9b90f9020a08d597c35d53f688e9c9abc116a974115021f98458e40ecb4"
+    }
+  }
+}
