@@ -1,10 +1,20 @@
 {
   "schema": 1,
-  "profile": "V1_V4_GATE",
-  "strategy_origin": "0.9.168 (U4)+0.9.171 V4 (rescue add size 3%->4%)",
+  "profile": "V1_W4_GATE",
+  "strategy_origin": "0.9.169 (V4)+0.9.172 W4 (same-direction normal entries max 1 concurrent; rescue adds excluded)",
   "label_only_alias": false,
-  "adopted_from": "0.9.168 (U4)",
-  "user_authorization": "pt218u",
+  "adopted_from": "0.9.169 (V4)",
+  "user_authorization": "pt219u",
+  "w4_rule": {
+    "max_normal_side": 1,
+    "rescue_excluded": true,
+    "normal_in_rescue_counts": true,
+    "hooks": "open+capped (Engine171 max_normal_side)",
+    "backtest_ref": "engine172.Engine172(max_normal_side172=1) setup_0172 W4",
+    "note": "rescue_tp 60, rescue size 4%, slope 6 unchanged from V4"
+  },
+  "w4_since_ms": 1794255480000,
+  "w4_since_kst": "2026-11-10 05:18:00 KST",
   "v4_rule": {
     "rescue_size_pct": 4,
     "rescue_margin_pct": 40,
@@ -43,7 +53,7 @@
   "t1_since_ms": 1794210300000,
   "t1_since_kst": "2026-11-09 16:45:00 KST",
   "trend_pause169": {
-    "rule": "0.9.169 V4: U4 (Pause-B slope6 rescue-add pause + OFF4) + rescue add size 4% of available",
+    "rule": "0.9.170 W4: V4 (Pause-B slope6 rescue-add pause + OFF4 + rescue add 4%) + same-direction normal entries max 1 concurrent (rescue adds excluded)",
     "params": {
       "pause_tf": "4h",
       "stale_days": null,
@@ -57,18 +67,18 @@
     "paused_L": true,
     "paused_S": false,
     "sma": {
-      "t_end": 1794255300000,
+      "t_end": 1794255780000,
       "sma": 78917.57,
       "sma_6bars_ago": 79283.795,
       "sma_close_t": 1794254400000,
-      "close": 74981.9
+      "close": 74868.1
     },
     "pause_hours": {
-      "L": 12.5,
+      "L": 12.6333,
       "S": 0.0
     },
     "pause_hours_while_rescue_active": {
-      "L": 12.5,
+      "L": 12.6333,
       "S": 0.0
     },
     "pause_slot_cancels": {
@@ -102,9 +112,27 @@
     },
     "u4_since_ms": 1794217500000,
     "rescue_size_pct": 4,
-    "v4_since_ms": 1794226020000
+    "v4_since_ms": 1794226020000,
+    "max_normal_side": 1,
+    "normal_open": {
+      "L": 3,
+      "S": 1
+    },
+    "max1_blocked": {
+      "open": {
+        "L": 0,
+        "S": 0
+      },
+      "market": {
+        "L": 5,
+        "S": 6
+      },
+      "total": 11
+    },
+    "w4_since_ms": 1794255480000
   },
   "component_sha256": {
+    "engine_v1_v4_gate.py": "dd81d5eeccb5ecdefbccf8ad547c07502a7ad6fee4f8165db331c7d684f84d46",
     "engine_v1_u4_gate.py": "e53a41a3d2e501cda51efcde46493bb1dfcfdb881122797470136cf4929fa202",
     "engine_v1_t1_gate.py": "0106460c9df1a99acfa4b67983f489bd853e758154e2755a0fa6485d5aad193e",
     "engine169.py": "94661ee3a8f8712ac062c5aa7426982dbaf66ceb9dafe2dee2c9b1384abc4f59",
@@ -114,11 +142,11 @@
     "engine158.py": "702fe8966597e2fd947315048e932a7ac0bd020854c9fb410ffa48c7c9b755d1"
   },
   "same_account_continuity": true,
-  "label": "0.9.169 (V4)",
+  "label": "0.9.170 (W4)",
   "mode": "LIVE",
-  "bar_end_ms": 1794255300000,
-  "bar_end_kst": "2026-11-10 05:15:00 KST",
-  "prepared_kst": "2026-11-10 05:16:02 KST",
+  "bar_end_ms": 1794255780000,
+  "bar_end_kst": "2026-11-10 05:23:00 KST",
+  "prepared_kst": "2026-11-10 05:23:17 KST",
   "seed": 1000,
   "original_start_ms": 1793576760000,
   "original_start_kst": "2026-11-02 08:46:00 KST",
@@ -128,7 +156,7 @@
     "rebate": 0.7
   },
   "repayment_estimate": 0.0005,
-  "source_sha256": "dd81d5eeccb5ecdefbccf8ad547c07502a7ad6fee4f8165db331c7d684f84d46",
+  "source_sha256": "615f89fe966a9bf6d6ef5efc8d6c21594c77c402382403b00d2888cc57d7dbcd",
   "pattern_switches166": {
     "tp_set": {
       "ma:1h": 200,
@@ -145,11 +173,11 @@
   },
   "base_engine166_sha256": "a7c9a0b4aa585a59ed38843184fed8eea831537569efd26e67797e2c156dd77e",
   "pinned_files": {
-    "config.json": "1e794d0d4a7a083b62b46acc7efa47084e034e5bc22c5f53d6752e73969b1a2e",
-    "run_live.py": "a4e15c55f5c9341b0f4d6f5f670be8c6ef9c952c9a7c58c271c400a1b54076ae",
-    "summary.py": "5906e5000500324610b7d9d3ff3581b6bc3601515a3192d08d4425c6939fb0a2"
+    "config.json": "ad81ff3042f152297882437fff4f114425ec46f8e009d92066b8aa72f2e8a6bd",
+    "run_live.py": "5c19161b1d5a01c9804525745a187b70b60e74f6293350ba37a37cf755744335",
+    "summary.py": "bfd4e881afc7f35c137ab5c2d2f0719f1c66c8253cef466e0d7683ba86ccbe83"
   },
-  "snapshot_state_sha256": "e9dd4bb459700125b26d790ea0252bba7294a2c0f7b1fa4461eb042acd30182e",
+  "snapshot_state_sha256": "06ba6289ac25580bb50e7bb489ffadebfafa269bba129323532b66ec4c44b67c",
   "chart_template_sha256": "a5810d5b2ffff116ca4d82eadbc6ce08d82a57d573a68c5f3111c98d37827208",
   "chart_source": "public Binance settled15m",
   "coherence": "captured summary/accounting last row matches settled state; PNG rendered from captured JSON/state",
@@ -160,12 +188,13 @@
     "data.json",
     "dash.png"
   ],
-  "optional_audit_path": "V1_V4_DEPLOYMENT.json",
+  "optional_audit_path": "V1_W4_DEPLOYMENT.json",
   "remote_must_delete": [
-    "V1_U4_DEPLOYMENT.json"
+    "V1_V4_DEPLOYMENT.json"
   ],
   "remote_must_be_absent": [
     "SHA256.json",
+    "V1_V4_DEPLOYMENT.json",
     "V1_U4_DEPLOYMENT.json",
     "V1_T1_DEPLOYMENT.json",
     "V1_B6_DEPLOYMENT.json",
