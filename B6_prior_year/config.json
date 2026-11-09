@@ -1,0 +1,65 @@
+{
+  "module": "engine167",
+  "cls": "Engine167",
+  "version": "0.9.167",
+  "edits": "/workspace/gateladder_bt/line_edits_20261103b.json",
+  "start": 1730646000000,
+  "source_sha256": "1a40c4845e4fb67e4f5e3cc268500c841050062734b18bd0a0798bc01d320dd9",
+  "replay_end_ms": 1762182000000,
+  "comparison_baselines": {
+    "B4": "frozen live_0164/X1/replay_complete/report.json; no annual rerun"
+  },
+  "variant": "B6",
+  "flags": {
+    "TREND": true,
+    "RSI": true,
+    "STRETCH": false,
+    "UNTIL_ZERO": false,
+    "SIDE_BLOCK": true
+  },
+  "settings155": {
+    "rsi_upper": 70,
+    "rsi_lower": 30,
+    "pos30": false
+  },
+  "source_zip_sha256": null,
+  "need_held": false,
+  "rescue_params158": {
+    "rescue_max_open": 20,
+    "rescue_gap": 0.003,
+    "rescue_margin_pct": 40,
+    "rescue_size_pct": 3,
+    "open_limit": true
+  },
+  "params159": {
+    "held_block": false,
+    "start_roi": -2,
+    "rescue_tp": 60
+  },
+  "source_kind": "pt210u 0.9.168 request: B6 unchanged on prior year",
+  "automatic_improvement_round": "TF-optimization1/5",
+  "params162": {
+    "normal_cap_pct": 20
+  },
+  "params162m": {
+    "m1_market": true,
+    "m1_break_tp": 90
+  },
+  "params167": {
+    "tp_set": {
+      "ma:1h": 200,
+      "mat:1h": 200
+    },
+    "off": [
+      "mat:15m"
+    ],
+    "market_frames": [],
+    "ma_market_frames": []
+  },
+  "label": "0.9.166 (B6) prior-year check 0.9.168",
+  "fee_basis": "annual paper basis maker 0.018% / taker 0.042% / rebate 70% (V1 live Gate uses 0.02/0.045 separately)",
+  "period_kst": "2024-11-04 00:00 ~ 2025-11-03 23:59 KST",
+  "input_minutes": "/workspace/gateladder_bt/inputs_0168/historical_minutes_2024_prior_year.pkl",
+  "filters_seed": "/workspace/gateladder_bt/inputs_0168/filters_0168_seed.pkl",
+  "strategy_seed": "/workspace/gateladder_bt/inputs_0168/strategy_0168_seed.pkl"
+}

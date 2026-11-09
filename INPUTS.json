@@ -1,0 +1,53 @@
+{
+  "binance_1m": {
+    "source": "https://fapi.binance.com/fapi/v1/klines",
+    "symbol": "BTCUSDT",
+    "interval": "1m",
+    "fields": "t,o,h,l,c,volume(BTC),quote_volume(USDT),trades,taker_buy_base",
+    "start_ms": 1722438000000,
+    "end_exclusive_ms": 1794495600000,
+    "rows": 1195992,
+    "first": 1722438000000,
+    "last": 1794197460000,
+    "gaps": [],
+    "fetched_kst": "2026-11-09 13:11:26 KST",
+    "sha256": "d8e8438abbb6cc04894ef0df948fd5c63484f42125c82ce3e2a9dbc349f17d73"
+  },
+  "part1_manifest": {
+    "minutes": 525600,
+    "start": 1730646000000,
+    "end_exclusive": 1762182000000,
+    "ws": 1729512000000,
+    "inputs": {
+      "/workspace/gateladder_bt/inputs_0168/historical_minutes_2024_prior_year.pkl": "b7efcbaa797996eb71ee8e68fcfc236c8e9aadd61c19ddfbddf25169cae4c22c",
+      "/workspace/gateladder_bt/inputs_0168/filters_0168_seed.pkl": "4ae0437b65d2de472e9244e661da8a8a30eb48a99b1a885e55798b9fe58d73f7",
+      "/workspace/gateladder_bt/inputs_0168/strategy_0168_seed.pkl": "e014411f1506a5e31997623224fe0d10dc69e66492571bea3c67e3bb69a84f9e",
+      "/workspace/gateladder_bt/line_edits_20261103b.json": "0b9bf346630e822504561a8a81a8d908f201c7ccf9f677c9078a648ad1175ea1",
+      "/workspace/gateladder_bt/engine167.py": "1a40c4845e4fb67e4f5e3cc268500c841050062734b18bd0a0798bc01d320dd9",
+      "/workspace/gateladder_bt/inputs_0168/btcusdt_1m_fapi_with_volume.npz": "d8e8438abbb6cc04894ef0df948fd5c63484f42125c82ce3e2a9dbc349f17d73"
+    }
+  },
+  "fib_java": {
+    "path": "src_20261108_0601/app/src/main/java/kr/ladder/btc/Fib.java",
+    "sha256": "9057d7acd5783ca50982039a109ef2e1419cf5b6781f74a37ba48d9db51a2fe1"
+  },
+  "part2_scripts": {
+    "reversal_0168.py": "2b167ecaefbceb3ee0653288ce05f14946b4ad907827e2d9f97b2fa3aa38afc3",
+    "summarize_0168.py": "78a65a330fe470c08e0f4689b3eea8e444da65eda9008357b4264708ffd7fa3b",
+    "validate_detector_0168.py": "ba40b3d498c43ca736cdb9200a69e50f87831b4b7e645161854b1f16cc51c81d"
+  },
+  "part1_scripts": {
+    "setup_0168.py": "026f6dab8e9913dbec4c96cc9e7d178150ad1cd355ea5949e27dfa0ab912450c",
+    "supervise_0168.py": "c6196a3049a47516b162ba2119b5f3a85d3f496c233057a6955cc5af06fa7269",
+    "kcache0168.py": "9375abb730ea063428785ee5afc62b3157b90e9ccc486be2f34c4526d736c15e",
+    "report_v2_0168.py": "6a68fa9c5381cad17b3cb2ea056094aebdd350aba2a5ff06563cd6fcbb22547a",
+    "cohort_0168.py": "6f65e309eaed871e52254958ac1826d603e45abe8b1165ede94837624ce06104",
+    "cohort_tf_0168.py": "0cc7a1a580421fd4d678f94d4c7256ecc6ea1e2600cec1f7ee60f40833c13394",
+    "finalize_0168.py": "cdb1a21f0823d2aa48567ee469d759407351456a1d76ccf3d036c978454ee9ff",
+    "export_entries_0167.py": "33919abe9d2565dc796be84719b8d2747f1b1f686c8adb0b228f26caee66c167",
+    "engine167.py": "1a40c4845e4fb67e4f5e3cc268500c841050062734b18bd0a0798bc01d320dd9",
+    "prepare_0168_seeds.py": "5a4377cd1bf9fced43a82e77271d126ce9d652063e864ac323b489a44b4812b6",
+    "fetch_0168.py": "0410ea8091836fcf4c909542fbe7389576958a14070a5e997b6cdf2c22c03634"
+  },
+  "overlap_check_vs_0167_input": "579,774 overlapping minutes vs inputs_0164 (2025-10-01~2026-11-07): open 0, high 29, low 20, close 242 mismatches (minor late-bar revisions); Part1 period does not overlap .167 input."
+}
