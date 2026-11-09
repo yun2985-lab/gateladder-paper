@@ -1,0 +1,51 @@
+{
+  "version": "0.9.168",
+  "branch": "data_0168",
+  "status": "COMPLETE_VERIFIED",
+  "parts": [
+    "B6_prior_year",
+    "reversal_signals"
+  ],
+  "completed_kst": "2026-11-09 13:59:56 KST",
+  "part1_completed_kst": "2026-11-09 13:59:28 KST",
+  "part1_minutes": 525600,
+  "part1_period_kst": "2024-11-04 00:00 ~ 2025-11-03 23:59",
+  "part1_parameters": {
+    "app": "0.9.166 (B6)",
+    "start_roi": -2,
+    "rescue_gap": 0.003,
+    "cyc_tp": 60,
+    "margin_pause": 40,
+    "rsi_lower": 30,
+    "rsi_upper": 70,
+    "market_tp": 90,
+    "normal_cap": 20,
+    "max_open": 20,
+    "pattern_switches": {
+      "tp_set": {
+        "ma:1h": 200,
+        "mat:1h": 200
+      },
+      "off": [
+        "mat:15m"
+      ],
+      "market_frames": [],
+      "ma_market_frames": []
+    },
+    "fees": "maker 0.018% / taker 0.042% / rebate 70%"
+  },
+  "part2_years": [
+    "2024-11-04~2025-11-03 KST",
+    "2025-11-04~2026-11-07 KST"
+  ],
+  "part2_frames": [
+    "15m",
+    "1h",
+    "4h",
+    "1m(reference)"
+  ],
+  "v1_unchanged": "0.9.166 (B6) live paper untouched",
+  "actual_file_count_before_DONE": 31,
+  "manifest_sha256": "40f27e5bcc89fc17e8d4ea5700c3358c975b2b3fed3f2d807dcd4461eef60c3e",
+  "publication_protocol": "Commit ONLY after all other remote files hash verified; DONE separate LAST commit then verify all files"
+}
