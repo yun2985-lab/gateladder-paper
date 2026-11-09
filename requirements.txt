@@ -1,0 +1,5 @@
+# GateLadder engine export - tested with CPython 3.13.5 (64-bit)
+numpy==2.5.4
+pandas==3.0.6
+# only for fetch_data.py (re-downloading Binance 1m klines); run.py never uses the network
+requests==2.34.2

@@ -1,0 +1,73 @@
+{
+  "name": "V4_Y2025",
+  "description": "U4 + 구출 물타기 크기 4%",
+  "version": "0.9.171",
+  "engine_module": "engine171",
+  "engine_class": "Engine171",
+  "start_kst": "2025-11-04 00:00",
+  "end_kst": "2026-11-07 23:54",
+  "initial_equity": 1000.0,
+  "edits": "inputs/line_edits_20261103b.json",
+  "minute_files": [
+    "data/btcusdt_1m_master.npz",
+    "data/btcusdt_1m_Y2025_engine_input.npz"
+  ],
+  "flags": {
+    "TREND": true,
+    "RSI": true,
+    "STRETCH": false,
+    "UNTIL_ZERO": false,
+    "SIDE_BLOCK": true
+  },
+  "settings155": {
+    "rsi_upper": 70,
+    "rsi_lower": 30,
+    "pos30": false
+  },
+  "need_held": false,
+  "rescue_params158": {
+    "rescue_max_open": 20,
+    "rescue_gap": 0.003,
+    "rescue_margin_pct": 40,
+    "rescue_size_pct": 3,
+    "open_limit": true
+  },
+  "params159": {
+    "held_block": false,
+    "start_roi": -2,
+    "rescue_tp": 60
+  },
+  "params162": {
+    "normal_cap_pct": 20
+  },
+  "params162m": {
+    "m1_market": true,
+    "m1_break_tp": 90
+  },
+  "params167": {
+    "tp_set": {
+      "ma:1h": 200,
+      "mat:1h": 200
+    },
+    "off": [
+      "mat:15m",
+      "ma20:15m",
+      "ma60:15m",
+      "ma20:1h"
+    ],
+    "market_frames": [],
+    "ma_market_frames": []
+  },
+  "params169": {
+    "pause_tf": "4h"
+  },
+  "params170": {
+    "div1m_off": true,
+    "sl_pct": null,
+    "pause_mode": "B"
+  },
+  "params171": {
+    "rescue_size_pct171": 4
+  },
+  "source_run": "live_0171/V4_Y2025 (original Linux run dir)"
+}

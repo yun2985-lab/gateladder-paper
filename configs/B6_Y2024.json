@@ -1,0 +1,58 @@
+{
+  "name": "B6_Y2024",
+  "description": "0.9.166 (B6) prior-year check 0.9.168",
+  "version": "0.9.167",
+  "engine_module": "engine167",
+  "engine_class": "Engine167",
+  "start_kst": "2024-11-04 00:00",
+  "end_kst": "2025-11-03",
+  "initial_equity": 1000.0,
+  "edits": "inputs/line_edits_20261103b.json",
+  "minute_files": [
+    "data/btcusdt_1m_master.npz"
+  ],
+  "flags": {
+    "TREND": true,
+    "RSI": true,
+    "STRETCH": false,
+    "UNTIL_ZERO": false,
+    "SIDE_BLOCK": true
+  },
+  "settings155": {
+    "rsi_upper": 70,
+    "rsi_lower": 30,
+    "pos30": false
+  },
+  "need_held": false,
+  "rescue_params158": {
+    "rescue_max_open": 20,
+    "rescue_gap": 0.003,
+    "rescue_margin_pct": 40,
+    "rescue_size_pct": 3,
+    "open_limit": true
+  },
+  "params159": {
+    "held_block": false,
+    "start_roi": -2,
+    "rescue_tp": 60
+  },
+  "params162": {
+    "normal_cap_pct": 20
+  },
+  "params162m": {
+    "m1_market": true,
+    "m1_break_tp": 90
+  },
+  "params167": {
+    "tp_set": {
+      "ma:1h": 200,
+      "mat:1h": 200
+    },
+    "off": [
+      "mat:15m"
+    ],
+    "market_frames": [],
+    "ma_market_frames": []
+  },
+  "source_run": "live_0168/B6 (original Linux run dir)"
+}

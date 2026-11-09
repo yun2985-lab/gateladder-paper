@@ -1,0 +1,84 @@
+{
+  "description": "BTCUSDT USDT-M futures 1m klines (Binance fapi/v1/klines). t=open time epoch ms (int64), o/h/l/c float64. content_sha256 = sha256(t<i8 bytes + o,h,l,c <f8 bytes).",
+  "files": {
+    "btcusdt_1m_master.npz": {
+      "sha256": "9038715f4416fea8349ffe655eab0bc129e13ec6b8ffc4f67b970cf03c0b0b41",
+      "content_sha256": "1a263f84526ff2abe3e5708d619bbacbc7f2dfd91fe6201cc21874ac82f5de66",
+      "bytes": 16534532,
+      "rows": 1195200,
+      "first_kst": "2024-08-01 00:00",
+      "last_kst": "2026-11-08 23:59",
+      "note": "Binance fapi 1m, fetched 2026-11-09 13:11 KST (fetch_0168.py), 2024-08-01 00:00 ~ 2026-11-08 23:59 KST, no gaps. Identical to the Y2024 engine input in its range. Used for every warm-up seed and SMA table."
+    },
+    "btcusdt_1m_Y2025_engine_input.npz": {
+      "sha256": "ea12c9b27f673c7c407f8815eaea1f10333d8a54d472c71fee8a61a450c36bd5",
+      "content_sha256": "9dd5ad6f1e91041393c8be709e5c794f39de09acbaea4e19ba3b8a04fe11fb2b",
+      "bytes": 7968028,
+      "rows": 579774,
+      "first_kst": "2025-10-01 09:00",
+      "last_kst": "2026-11-07 23:53",
+      "note": "Exact Y2025 engine input (inputs_0164/historical_minutes_through_fixed_cutoff.pkl): 2025-10-01 09:00 ~ 2026-11-07 23:53 KST. Equals the master except 242 bars 2026-11-04 13:45 ~ 2026-11-07 23:02 KST taken from the live 1m cache; listed AFTER the master in Y2025 configs so it overrides."
+    }
+  },
+  "derived": {
+    "Y2024": {
+      "start_kst": "2024-11-04 00:00",
+      "end_kst_exclusive": "2025-11-04 00:00",
+      "minute_files": [
+        "data/btcusdt_1m_master.npz"
+      ],
+      "filters_seed": "69191916b3d0015df71022faaf99d2c5a15f8c95f2f5ab9a896a247838cbd9eb",
+      "strategy_seed": "2c8bc17d8bb85e4514145e67a1ce1cdf80bf449a558f845fe8ea937e4c0ae1a7",
+      "sma_table": "e06c1cc0f77a84c8e0d820c7ce38cca40a4ed1ffb0f3158beb474b19d4f9b64b",
+      "replay_minutes": "0eed4eae8c0f04c4135970e9f8f201e31af54fd6a774c0e253606d69ca80da75",
+      "original_pickles": {
+        "minutes": {
+          "file": "inputs_0168/historical_minutes_2024_prior_year.pkl",
+          "sha256": "b7efcbaa797996eb71ee8e68fcfc236c8e9aadd61c19ddfbddf25169cae4c22c"
+        },
+        "filters_seed": {
+          "file": "inputs_0168/filters_0168_seed.pkl",
+          "sha256": "4ae0437b65d2de472e9244e661da8a8a30eb48a99b1a885e55798b9fe58d73f7"
+        },
+        "strategy_seed": {
+          "file": "inputs_0168/strategy_0168_seed.pkl",
+          "sha256": "e014411f1506a5e31997623224fe0d10dc69e66492571bea3c67e3bb69a84f9e"
+        },
+        "sma_table": {
+          "file": "inputs_0169/sma_Y2024.pkl",
+          "sha256": "a9e370392ba18ff60909a340716731ab7c8c9e55ecdec2caea931bc0312d3579"
+        }
+      }
+    },
+    "Y2025": {
+      "start_kst": "2025-11-04 00:00",
+      "end_kst_exclusive": "2026-11-07 23:54",
+      "minute_files": [
+        "data/btcusdt_1m_master.npz",
+        "data/btcusdt_1m_Y2025_engine_input.npz"
+      ],
+      "filters_seed": "a1f50d491630c2a98badcc7519b44f840372041d86b135bff3a5dab0ca6b8534",
+      "strategy_seed": "5ea92314b0f14e7f03bdc8331c466b8630dece4cd37b6039e1daede450efa080",
+      "sma_table": "9b49d4875129cfc7d2c5e0a2d5b03f0641ebd6ef08c11bcdaad6e7857ec08508",
+      "replay_minutes": "b1504859b39a054d8bb209f0aa8c9f6c8d7e3e75a1c203700a3874672e8bc7b8",
+      "original_pickles": {
+        "minutes": {
+          "file": "inputs_0164/historical_minutes_through_fixed_cutoff.pkl",
+          "sha256": "bd28e1ac68ed6cb9db962a295bf6da95052636536873e456be247fecbaedddc6"
+        },
+        "filters_seed": {
+          "file": "filters_0154_seed.pkl",
+          "sha256": "d5fe133b2a331d8bb59a7849d3bb4e2b501eb779741e3bd2e9f1da6f708964de"
+        },
+        "strategy_seed": {
+          "file": "strategy_0154_seed.pkl",
+          "sha256": "8fb29cba1c04abc7f3098ec1f06ccf41e41fa5779c2950cfd9b04163872fd2f6"
+        },
+        "sma_table": {
+          "file": "inputs_0169/sma_Y2025.pkl",
+          "sha256": "aab11e4a42a68f5fbb406ee3dd98a2528de6e6d36535c453ad96875e49de55e1"
+        }
+      }
+    }
+  }
+}
