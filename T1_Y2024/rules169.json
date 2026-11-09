@@ -1,0 +1,191 @@
+{
+  "params": {
+    "pause_tf": "4h",
+    "stale_days": null,
+    "opp_bank": false,
+    "opp_age_days": 7,
+    "loss_cap_pct": null,
+    "net_tf": null,
+    "net_size_pct": 3
+  },
+  "pnl_by_side_kind": {
+    "L_normal": {
+      "closed_records": 1627,
+      "realized_pnl_raw": 3.1603,
+      "realized_pnl_rebate70": 36.6333,
+      "open_count": 1,
+      "open_contracts": 2,
+      "open_unrealized_gross": -3.19378
+    },
+    "L_rescue": {
+      "closed_records": 1456,
+      "realized_pnl_raw": 21.1812,
+      "realized_pnl_rebate70": 44.4594,
+      "open_count": 2,
+      "open_contracts": 11,
+      "open_unrealized_gross": -6.25463
+    },
+    "L_net": {
+      "closed_records": 0,
+      "realized_pnl_raw": 0,
+      "realized_pnl_rebate70": 0,
+      "open_count": 0,
+      "open_contracts": 0,
+      "open_unrealized_gross": 0
+    },
+    "S_normal": {
+      "closed_records": 49,
+      "realized_pnl_raw": -67.3074,
+      "realized_pnl_rebate70": -66.7726,
+      "open_count": 1,
+      "open_contracts": 2,
+      "open_unrealized_gross": -8.0798
+    },
+    "S_rescue": {
+      "closed_records": 1714,
+      "realized_pnl_raw": 28.3452,
+      "realized_pnl_rebate70": 56.506,
+      "open_count": 2,
+      "open_contracts": 18,
+      "open_unrealized_gross": -48.55392
+    },
+    "S_net": {
+      "closed_records": 0,
+      "realized_pnl_raw": 0,
+      "realized_pnl_rebate70": 0,
+      "open_count": 0,
+      "open_contracts": 0,
+      "open_unrealized_gross": 0
+    }
+  },
+  "forced_closes": {
+    "stale30d_169": {
+      "events": 0,
+      "contracts": 0,
+      "realized_gross": 0.0,
+      "realized_pnl_raw": 0,
+      "realized_pnl_rebate70": 0,
+      "by_side": {
+        "L": 0,
+        "S": 0
+      }
+    },
+    "losscap10_169": {
+      "events": 0,
+      "contracts": 0,
+      "realized_gross": 0.0,
+      "realized_pnl_raw": 0,
+      "realized_pnl_rebate70": 0,
+      "by_side": {
+        "L": 0,
+        "S": 0
+      }
+    },
+    "opprepay_169": {
+      "events": 0,
+      "contracts": 0,
+      "realized_gross": 0.0,
+      "realized_pnl_raw": 0,
+      "realized_pnl_rebate70": 0,
+      "by_side": {
+        "L": 0,
+        "S": 0
+      }
+    }
+  },
+  "rescue_adds_open_at_end": {
+    "count": 4,
+    "contracts": 29,
+    "unrealized_gross": -54.80855,
+    "L": 2,
+    "S": 2
+  },
+  "net_adds_open_at_end": {
+    "count": 0,
+    "contracts": 0,
+    "unrealized_gross": 0,
+    "L": 0,
+    "S": 0
+  },
+  "trend_pause_hours": {
+    "regime": {
+      "L": 3936.3333,
+      "S": 4823.6667
+    },
+    "while_rescue_active": {
+      "L": 3930.7833,
+      "S": 4822.75
+    }
+  },
+  "pause_slot_cancels": {
+    "L": 0,
+    "S": 0
+  },
+  "pause_suppressed_placements": {
+    "L": 2123,
+    "S": 2692
+  },
+  "regime_changes": 1224,
+  "opp_bank": {
+    "deposits": {
+      "L": 0,
+      "S": 0
+    },
+    "deposit_gross": {
+      "L": "0",
+      "S": "0"
+    },
+    "repay_events": {
+      "L": 0,
+      "S": 0
+    },
+    "repay_contracts": {
+      "L": 0,
+      "S": 0
+    },
+    "final_bank": {
+      "L": "0",
+      "S": "0"
+    }
+  },
+  "net": {
+    "sessions": {
+      "L": 0,
+      "S": 0
+    },
+    "sessions_without_stuck_normal": {
+      "L": 0,
+      "S": 0
+    },
+    "sessions_without_any_normal": {
+      "L": 0,
+      "S": 0
+    },
+    "adds": {
+      "L": 0,
+      "S": 0
+    },
+    "first_limits": {
+      "L": 0,
+      "S": 0
+    },
+    "margin_skips": {
+      "L": 0,
+      "S": 0
+    },
+    "gap_skips": {
+      "L": 0,
+      "S": 0
+    },
+    "hours_on": {
+      "L": 0.0,
+      "S": 0.0
+    },
+    "longest_session_hours": 0,
+    "end_reasons": {
+      "trend_off": 0,
+      "real_rescue_active": 0,
+      "ongoing": 0
+    }
+  }
+}
