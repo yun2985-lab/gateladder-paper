@@ -1,0 +1,44 @@
+{
+  "version": "0.9.171",
+  "branch": "data_0171",
+  "status": "COMPLETE_VERIFIED",
+  "runs": [
+    "V1_Y2024",
+    "V1_Y2025",
+    "V2_Y2024",
+    "V2_Y2025",
+    "V3_Y2024",
+    "V3_Y2025",
+    "V4_Y2024",
+    "V4_Y2025",
+    "V5_Y2024",
+    "V5_Y2025",
+    "V6_Y2024",
+    "V6_Y2025"
+  ],
+  "runs_count": 12,
+  "completed_kst": "2026-11-09 20:23:07 KST",
+  "judgment": {
+    "rule": "candidate = both years rebate>0 AND both raw MDD<=25%; best = max two-year rebate sum; adopt-recommend only if sum > frozen U4 sum",
+    "u4_two_year_sum_pct": 8.107888,
+    "candidates": [
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5",
+      "V6"
+    ],
+    "best_candidate": "V4",
+    "best_candidate_sum_pct": 12.589619,
+    "result": "ADOPT_RECOMMEND",
+    "recommendation": "V4 (사용자 확인 후에만 채택)",
+    "adoption_is_user_decision": true
+  },
+  "v1_note": "paper only; adoption is user decision",
+  "fees": "maker 0.018% / taker 0.042% / rebate 70%",
+  "actual_file_count_before_DONE": 140,
+  "file_count_including_DONE": 141,
+  "manifest_sha256": "4a6cfc5843a09c1968c78827c89464cc6d8e7345ed2c1114603e47ab7ca58b15",
+  "publication_protocol": "Commit ONLY after all other remote files hash verified; DONE separate LAST commit then verify all files"
+}
