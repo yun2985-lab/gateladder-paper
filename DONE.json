@@ -1,0 +1,114 @@
+{
+ "branch": "engine_export",
+ "bundle": "bundle.zip",
+ "bundle_bytes": 24189393,
+ "bundle_sha256": "ea713ad1183034c86bf12b1d754bfb7c7ed9154d666594c87d065ef5e55d3445",
+ "files_in_bundle": 94,
+ "built_kst": "2026-11-10",
+ "commit_note": "commit DONE.json LAST, after the bundle contents",
+ "verification": {
+  "method": "package CLI run.py in a clean copy (no imports from the work dir; foreign_modules empty), fresh venv Python 3.13.5 numpy 2.5.4 pandas 3.0.6; verify_results.py vs expected/frozen_baselines.json",
+  "runs": {
+   "W4_Y2024": {
+    "expected": [
+     4.976,
+     19.986
+    ],
+    "got": [
+     4.976,
+     19.986
+    ],
+    "trades": [
+     5051,
+     5051
+    ],
+    "equity_raw": 939.507516,
+    "trades_csv_byte_identical": true,
+    "wall_s": 3376,
+    "peak_rss_mb": 594.4,
+    "result": "PASS"
+   },
+   "W4_Y2025": {
+    "expected": [
+     15.684,
+     7.675
+    ],
+    "got": [
+     15.684,
+     7.675
+    ],
+    "trades": [
+     4275,
+     4275
+    ],
+    "equity_raw": 1058.24047,
+    "trades_csv_byte_identical": true,
+    "wall_s": 3493,
+    "peak_rss_mb": 677.5,
+    "result": "PASS"
+   },
+   "X5_Y2024": {
+    "expected": [
+     9.292,
+     20.325
+    ],
+    "got": [
+     9.292,
+     20.325
+    ],
+    "trades": [
+     4938,
+     4938
+    ],
+    "equity_raw": 971.332202,
+    "trades_csv_byte_identical": true,
+    "wall_s": 2497,
+    "peak_rss_mb": 600.6,
+    "result": "PASS"
+   },
+   "X5_Y2025": {
+    "expected": [
+     20.079,
+     9.771
+    ],
+    "got": [
+     20.079,
+     9.771
+    ],
+    "trades": [
+     4004,
+     4004
+    ],
+    "equity_raw": 1098.971697,
+    "trades_csv_byte_identical": true,
+    "wall_s": 2621,
+    "peak_rss_mb": 677.5,
+    "result": "PASS"
+   }
+  },
+  "smoke": {
+   "W4_custom_2026_03": {
+    "rebate_pct": 0.687,
+    "raw_mdd_pct": 2.875,
+    "trades": 484,
+    "wall_s": 231,
+    "peak_rss_mb": 304.7
+   },
+   "X5_custom_2026_03": {
+    "rebate_pct": 1.191,
+    "raw_mdd_pct": 3.501,
+    "trades": 504,
+    "wall_s": 229,
+    "peak_rss_mb": 305.0
+   }
+  },
+  "overrides_default_identity": "3-day W4 window 2026-03-01..03-03: final code vs unmodified code byte-identical (trades/equity/monthly/repayments/entries/report; events.log excl. wall clock); X5 full years on final code PASS"
+ },
+ "secret_scan": {
+  "file_name_hits": 0,
+  "content_pattern_hits": 0,
+  "long_string_hits": "code identifiers only",
+  "patterns": "api key, secret, token, password, PRIVATE KEY, signing key, bearer, authorization, x-mbx-apikey, aws, ghp_, github_pat_, xox, sk-, hmac"
+ },
+ "paper_only": true
+}
