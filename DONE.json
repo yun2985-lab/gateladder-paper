@@ -1,0 +1,169 @@
+{
+  "version": "0.9.167",
+  "branch": "data_0167",
+  "status": "COMPLETE_VERIFIED",
+  "conditions": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6"
+  ],
+  "completed_kst": "2026-11-09 09:10:19 KST",
+  "condition_completion_times_kst": {
+    "G1": "2026-11-09 09:09:57 KST",
+    "G2": "2026-11-09 09:10:15 KST",
+    "G3": "2026-11-09 09:10:12 KST",
+    "G4": "2026-11-09 09:10:14 KST",
+    "G5": "2026-11-09 09:10:19 KST",
+    "G6": "2026-11-09 09:10:07 KST"
+  },
+  "minutes_per_condition": 531354,
+  "condition_parameters": {
+    "G1": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 40,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90,
+      "normal_cap": 20,
+      "max_open": 20
+    },
+    "G2": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 40,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90,
+      "normal_cap": 20,
+      "max_open": 20
+    },
+    "G3": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 40,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90,
+      "normal_cap": 20,
+      "max_open": 20
+    },
+    "G4": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 40,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90,
+      "normal_cap": 20,
+      "max_open": 20
+    },
+    "G5": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 40,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90,
+      "normal_cap": 20,
+      "max_open": 20
+    },
+    "G6": {
+      "start_roi": -2,
+      "rescue_gap": 0.003,
+      "cyc_tp": 60,
+      "margin_pause": 40,
+      "rsi_lower": 30,
+      "rsi_upper": 70,
+      "market_tp": 90,
+      "normal_cap": 20,
+      "max_open": 20
+    }
+  },
+  "pattern_switches_by_condition": {
+    "G1": {
+      "tp_set": {
+        "ma:1h": 200,
+        "mat:1h": 200
+      },
+      "off": [
+        "mat:15m"
+      ],
+      "market_frames": [],
+      "ma_market_frames": []
+    },
+    "G2": {
+      "tp_set": {
+        "ma:1h": 150,
+        "mat:1h": 150
+      },
+      "off": [
+        "mat:15m"
+      ],
+      "market_frames": [],
+      "ma_market_frames": []
+    },
+    "G3": {
+      "tp_set": {},
+      "off": [
+        "mat:15m",
+        "mat20:1h"
+      ],
+      "market_frames": [],
+      "ma_market_frames": []
+    },
+    "G4": {
+      "tp_set": {},
+      "off": [
+        "mat:15m",
+        "mat:1h"
+      ],
+      "market_frames": [],
+      "ma_market_frames": []
+    },
+    "G5": {
+      "tp_set": {},
+      "off": [
+        "mat:15m"
+      ],
+      "market_frames": [],
+      "ma_market_frames": [
+        "15m"
+      ]
+    },
+    "G6": {
+      "tp_set": {},
+      "off": [
+        "mat:15m"
+      ],
+      "market_frames": [],
+      "ma_market_frames": [
+        "1h"
+      ]
+    }
+  },
+  "actual_file_count_before_DONE": 87,
+  "baseline": "B5=frozen166F3 not rerun",
+  "round_counters_reset_by_user": false,
+  "automatic_improvement_round": "TF-optimization2/5",
+  "no_improvement_count_before_round": 0,
+  "m1_market": true,
+  "m1_tp_by_condition": {
+    "G1": 90,
+    "G2": 90,
+    "G3": 90,
+    "G4": 90,
+    "G5": 90,
+    "G6": 90
+  },
+  "manifest_sha256": "713276916c4ecaf29b098e6e722c6ade6c6020442a3bf98e74af2794cd2212c0",
+  "publication_protocol": "Commit ONLY after all other remote files hash verified; DONE separate LAST commit then verify all files"
+}
